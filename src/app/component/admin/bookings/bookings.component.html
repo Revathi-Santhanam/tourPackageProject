@@ -1,0 +1,39 @@
+
+
+
+
+  <div class="card-body body">
+    <div class="table-responsive table-desi">
+      <table class="Booking-table table table-striped">
+        <thead>
+          <tr>
+         
+            <th>id</th>
+            <th>tour</th>
+            <th>userId</th>
+            <th>name</th>
+            <th>username</th>
+            <th>phoneNumber</th>
+            <th>price</th>
+            <th>bookingStatus</th>
+            <th>Ordered At</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let b of bookings">
+           <td>{{b.id}}</td>
+           <td>{{b.tour}}</td>
+           <td>{{b.userId}}</td>
+           <td>{{b.name}}</td>
+           <td>{{b.username}}</td>
+           <td>{{b.phoneNumber}}</td>
+           <td>{{b.price}}</td>
+           <td>{{b.bookingStatus}}</td>
+           <td>{{b.createdAt}}</td>
+          </tr>
+          <!-- Add more table rows as needed -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+

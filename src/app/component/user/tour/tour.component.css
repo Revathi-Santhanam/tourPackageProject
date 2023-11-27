@@ -1,0 +1,190 @@
+.inner-banner {
+  position: relative;
+ padding-top: 75px;
+ padding-bottom: 75px;
+}
+
+.inner-banner .image-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+}
+
+.inner-banner .image-layer:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  background: -webkit-linear-gradient(
+    top,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.57),
+    rgba(16, 34, 27, 0.35),
+    rgba(16, 34, 27, 1)
+  );
+  background: -ms-linear-gradient(
+    top,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.57),
+    rgba(16, 34, 27, 0.35),
+    rgba(16, 34, 27, 1)
+  );
+  background: -moz-linear-gradient(
+    top,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.57),
+    rgba(16, 34, 27, 0.35),
+    rgba(16, 34, 27, 1)
+  );
+}
+
+.inner-banner .image-layer:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  /* background: url("assets/banner-pattern.png")bottom center repeat-x; */
+  height: 39px;
+  z-index: 1;
+  background-repeat: repeat-x;
+  animation: 80s linear 0s infinite normal none running slide;
+}
+
+@keyframes slide {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 3000px 0;
+  }
+}
+
+.inner-banner .content-box {
+  position: relative;
+  text-align: center;
+}
+
+.inner-banner .content-box h2 {
+  position: relative;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.inner-banner .bread-crumb {
+  position: relative;
+  line-height: 24px;
+  padding-left: 44px;
+}
+
+.inner-banner .bread-crumb .icon-home {
+  position: absolute;
+  left: -44px;
+  top: 0px;
+  width: 34px;
+  height: 34px;
+  font-size: 14px;
+  line-height: 34px;
+  text-align: center;
+  background: #1dc5ce;
+  color: #ffffff;
+  border-radius: 50%;
+}
+
+.inner-banner .bread-crumb ul li {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+  padding: 5px 0;
+  text-transform: capitalize;
+  margin-right: 22px;
+  color: #ffffff;
+}
+
+.inner-banner .bread-crumb ul li:last-child {
+  margin-right: 0;
+}
+
+.inner-banner .bread-crumb ul li:after {
+  content: "\f0da";
+  position: absolute;
+  right: -24px;
+  top: 6px;
+  width: 22px;
+  text-align: center;
+  font-weight: 700;
+  font-family: "Font Awesome 6 Pro";
+}
+
+.inner-banner .bread-crumb ul li:last-child:after {
+  display: none;
+}
+
+.inner-banner .bread-crumb ul li a {
+  position: relative;
+  color: #ffffff;
+}
+
+.inner-banner .bread-crumb ul li a:hover {
+  text-decoration: underline;
+}
+
+.page-info{
+  position: relative;
+  padding: 30px 0px;
+  border-top: 1px dashed #CBCBCB;
+}
+
+.page-info .links{
+  position: relative;
+  font-size: 16px;
+  line-height: 28px;
+  color: #10221B;
+}
+
+.page-info .links a{
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  color: #10221B;
+}
+
+.page-info .links i{
+  font-size: 14px;
+}
+
+.page-info .links a:hover,
+.page-info .links .current{
+  color: #1DC5CE;
+}
+
+.package-info-box{
+  position:relative;
+  margin-top:15px;
+  padding:30px 50px;
+  border-radius:6px;
+  margin-bottom:30px;
+  background-color:#f3f7fa;
+}
+.btn1 {
+  background-color: #1dc5ce !important;
+  color: white;
+  font-weight: bold;
+}
+
+
+

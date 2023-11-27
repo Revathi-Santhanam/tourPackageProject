@@ -1,0 +1,70 @@
+
+<div class="row">
+  <section class="inner-banner">
+    <div
+      class="image-layer"
+      style="background-image: url(assets/images/banner-image-1.jpg)"
+    ></div>
+    <div class="auto-container">
+      <div class="content-box">
+        <h2>Destinations</h2>
+        <div class="bread-crumb">
+          <ul class="clearfix">
+            <li><span class="icon-home fa fa-home"></span><a>Home</a></li>
+            <li class="current">Destinations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="dest-section">
+    <div class="floated-icon left">
+      <img src="assets/svg/stones-left.svg" alt="" title="" />
+    </div>
+    <div class="floated-icon right">
+      <img src="assets/svg/stones-right.svg" alt="" title="" />
+    </div>
+    <div class="auto-container">
+      <div class="title-box centered">
+        <h2><span>Trending Destinations</span></h2>
+        <div class="text">
+          Since 2014, we’ve helped more than 500,000 people of all ages enjoy
+          the best outdoor experience of their lives. Whether it’s for one day
+          or a two-week vacation, close to home or a foreign land.
+        </div>
+      </div>
+
+      <div
+        class="trend-block-one pe-2 col-xl-4 col-lg-6 col-md-6 col-sm-12"
+        style="display: inline-block"
+        *ngFor="let d of categories"
+      >
+        <div class="inner-box" (click)="navigateToDesTours(d.id!)">
+          <div class="image-box">
+            <div class="image">
+              <a href="#"
+                ><img src="assets/images/tour-10.jpg" alt="" title=""
+              /></a>
+            </div>
+          </div>
+
+          <div class="title clearfix">
+            <h4>
+              <a href="#"> {{ d.categoryName }}</a>
+            </h4>
+            <div class="more-link">
+              <a class="theme-btn"
+                ><span
+                  class="fa fa-long-arrow-right"
+                  (click)="navigateToDesTours(d.id!)"
+                ></span
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer></footer>
+</div>

@@ -1,0 +1,40 @@
+
+<div class="body">
+    <div class="card">
+      <div class="card-header">
+        <h5>Add Destination</h5>
+        <!--  [categories]="categories"
+        (editEmitter)="getCategory($event)" -->
+      </div>
+      <div class="card-body" >
+        <form #destinationForm="ngForm" (ngSubmit)="submitForm(destinationForm)">
+          <div class="mb-3">
+            <label class="form-label-title">Destination Name</label>
+            <input
+              class="form-control"
+              placeholder="Destination Name"
+              type="text"
+              name="categoryName"
+              [(ngModel)]="categoryModel.categoryName"
+              required
+            />
+            <div *ngIf="destinationForm.controls['categoryName'].invalid && destinationForm.controls['categoryName'].touched">
+              <small class="text-danger">Destination Name is required</small>
+            </div>
+          </div>
+        
+          <div class="mb-3">
+            <label class="form-label-title">Upload Tour Image</label>
+            <div class="dzu-dropzone">
+              <label class="dzu-inputLabel">Drop A File
+                <input class="dzu-input" accept="*" type="file" />
+              </label>
+            </div>
+          </div>
+        
+          <button class="btn btn-primary" type="submit" [disabled]="destinationForm.invalid">Add</button>
+        </form>
+        
+      </div>
+    </div>
+  </div>

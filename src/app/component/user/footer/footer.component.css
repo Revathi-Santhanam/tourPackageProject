@@ -1,0 +1,198 @@
+.footer-two{
+  position: relative;
+  background: #F9FCFF;
+  color: #505050;
+  padding: 0 0;
+}
+
+.footer-two .bg-layer{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 75%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+}
+
+.footer-two .upper-section{
+  position: relative;
+  padding: 150px 0 0;
+}
+
+.footer-two .upper-section .info-column{
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.footer-two .upper-section .footer-logo{
+  position: relative;
+  margin-bottom: 30px;
+  margin-top: -42px;
+}
+
+.footer-two .info-block{
+  margin-bottom: 30px;
+}
+
+.footer-two .info-block ul{
+  position: relative;
+  max-width: 300px;
+}
+
+.footer-two .info-block ul li{
+  line-height: 26px;
+  margin-bottom: 30px;
+}
+
+.footer-two .info-block ul li:last-child{
+  margin-bottom: 0;
+}
+
+.footer-two .info-block ul li a{
+  color: #505050;
+}
+
+.footer-two .info-block ul li a:hover{
+  text-decoration: underline;
+}
+
+.footer-two ul,
+.footer-two ul li{
+  list-style: none;
+  margin: 0;
+}
+
+.footer-two .upper-section{
+  position: relative;
+    padding: 140px 0 0;
+}
+
+.footer-two .upper-section .big-column{
+  position: relative;
+
+}
+
+.footer-two .upper-section .footer-column{
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.footer-two .upper-section h6{
+  position: relative;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding-bottom: 20px;
+  margin-bottom: 15px;
+}
+
+.footer-two .upper-section h6:before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  border-bottom: 2px solid #1DC5CE;
+}
+
+.footer-two .upper-section .links{
+  position: relative;
+}
+
+.footer-two .upper-section .links li{
+  position: relative;
+  display: block;
+  font-weight: 400;
+  line-height: 24px;
+  text-transform: capitalize;
+  margin-bottom: 8px;
+}
+
+.footer-two .upper-section .links li:last-child{
+  margin-bottom: 0;
+}
+
+.footer-two .upper-section .links li a{
+  position: relative;
+  color: #505050;
+  line-height: 24px;
+}
+
+.footer-two .upper-section .links li a:hover{
+  color: #1DC5CE;
+  text-decoration: underline;
+}
+
+.footer-two .upper-section .social-links{
+  position: relative;
+  padding-top: 30px;
+}
+
+.footer-two .upper-section .social-links ul{
+  position: relative;
+}
+
+.footer-two .upper-section .social-links ul li{
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 8px;
+}
+
+.footer-two .upper-section .social-links ul li:last-child{
+  margin-right: 0;
+}
+
+.footer-two .upper-section .social-links ul li a{
+  position: relative;
+  display: block;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  font-size: 14px;
+  color: #1DC5CE;
+  border: 1px solid #1DC5CE;
+  text-align: center;
+  border-radius: 50%;
+  -moz-transition:all 0.3s ease;
+  -webkit-transition:all 0.3s ease;
+  -ms-transition:all 0.3s ease;
+  -o-transition:all 0.3s ease;
+  transition:all 0.3s ease;
+}
+
+.footer-two .upper-section .social-links ul li a:hover{
+  background: #1DC5CE;
+  color: #ffffff;
+}
+
+.footer-two .f-bottom{
+  position: relative;
+  padding: 0 0;
+  background: #10221B;
+}
+
+.footer-two .f-bottom .inner{
+  position: relative;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.footer-two .f-bottom .copyright{
+  position: relative;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  line-height: 30px;
+}
+
+.footer-two .f-bottom .copyright a{
+  position: relative;
+  color: #ffffff;
+}
+
+.footer-two .f-bottom .copyright a:hover{
+  text-decoration: underline;
+}
+

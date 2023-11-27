@@ -1,0 +1,348 @@
+<div class="body">
+  <div class="card">
+    <div class="card-header">
+      <h5>Add Tour Details</h5>
+    </div>
+    <div class="card-body">
+      <form #tourForm="ngForm" (ngSubmit)="submitForm(tourForm)">
+        <div class="mb-3">
+          <label class="form-label-title">Tour Id</label>
+          <input
+            class="form-control"
+            placeholder="Tour Id"
+            type="text"
+            name="tourId"
+            [(ngModel)]="tourId"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label-title">Tour Name</label>
+          <input
+            class="form-control"
+            placeholder="Tour Name"
+            type="text"
+            name="tourName"
+            [(ngModel)]="tourName"
+            required
+          />
+          <div
+            *ngIf="
+              tourForm.controls['tourName']?.invalid &&
+              tourForm.controls['tourName']?.touched
+            "
+          >
+            <small class="text-danger">Tour Name is required</small>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label-title">CategoryId</label>
+          <input
+            class="form-control"
+            placeholder="CategoryId"
+            type="number"
+            name="categoryId"
+            [(ngModel)]="categoryId"
+            required
+          />
+          <div
+            *ngIf="
+              tourForm.controls['categoryId']?.invalid &&
+              tourForm.controls['categoryId']?.touched
+            "
+          >
+            <small class="text-danger">Tour Name is required</small>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label-title">Destination Name</label>
+          <input
+            class="form-control"
+            placeholder="Destination Name"
+            type="text"
+            name="destinationName"
+            [(ngModel)]="destinationName"
+            required
+          />
+          <div
+            *ngIf="
+              tourForm.controls['destinationName']?.invalid &&
+              tourForm.controls['destinationName']?.touched
+            "
+          >
+            <small class="text-danger">Destination Name is required</small>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label-title">Tour Description</label>
+          <input
+            class="form-control"
+            placeholder="Tour Description"
+            type="text"
+            name="tourDescription"
+            [(ngModel)]="tourDescription"
+            required
+          />
+          <div
+            *ngIf="
+              tourForm.controls['tourDescription']?.invalid &&
+              tourForm.controls['tourDescription']?.touched
+            "
+          >
+            <small class="text-danger">Tour Description is required</small>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label-title">Start date</label>
+          <input
+            class="form-control"
+            placeholder="Start date"
+            type="date"
+            name="departureDate"
+            [(ngModel)]="departureDate"
+            required
+          />
+          <div
+            *ngIf="
+              tourForm.controls['departureDate']?.invalid &&
+              tourForm.controls['departureDate']?.touched
+            "
+          >
+            <small class="text-danger">Start Date is required</small>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label-title">Tour Days</label>
+          <input
+            class="form-control"
+            placeholder="Tour Days"
+            type="number"
+            name="tourDays"
+            [(ngModel)]="tourDays"
+            required
+            (change)="getItineraries()"
+          />
+          <div
+            *ngIf="
+              tourForm.controls['tourDays']?.invalid &&
+              tourForm.controls['tourDays']?.touched
+            "
+          >
+            <small class="text-danger">Tour Days is required</small>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label-title">Tour Price</label>
+          <input
+            class="form-control"
+            placeholder="Tour Price"
+            type="number"
+            name="tourPrice"
+            [(ngModel)]="tourPrice"
+            required
+          />
+          <div
+            *ngIf="
+              tourForm.controls['tourPrice']?.invalid &&
+              tourForm.controls['tourPrice']?.touched
+            "
+          >
+            <small class="text-danger">Tour Price is required</small>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label-title">Total Seats</label>
+          <input
+            class="form-control"
+            placeholder="Total Seats"
+            type="number"
+            name="totalSeats"
+            [(ngModel)]="totalSeats"
+            required
+          />
+          <div
+            *ngIf="
+              tourForm.controls['totalSeats']?.invalid &&
+              tourForm.controls['totalSeats']?.touched
+            "
+          >
+            <small class="text-danger">Tour Price is required</small>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label-title">Upload Tour Image</label>
+          <div class="file">
+            <label class="fileInput"
+              >Drop A File
+              <input class="input" accept="*" type="file" />
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <h4>Add Itinerary</h4>
+          <div
+            *ngFor="let day of itineraries; let i = index"
+            class="itinerary-form"
+          >
+            <h5>Day {{ i + 1 }}</h5>
+            <div class="mb-3">
+              <label class="form-label-title">Itinerary Id</label>
+              <input
+                class="form-control"
+                placeholder="Itinerary Id"
+                type="text"
+                name="itineraryId"
+                [(ngModel)]="itineraryId"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label-title">Day</label>
+              <input
+                class="form-control"
+                placeholder="Day"
+                type="number"
+                name="day{{ i }}"
+                id="day{{ i }}"
+                [(ngModel)]="day.day"
+                required
+              />
+              <div *ngIf="tourForm.controls['day+i']?.hasError('required')">
+                <small class="text-danger">Day is required</small>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label-title">Accommodation/Hotel</label>
+              <input
+                class="form-control"
+                placeholder="Accommodation"
+                type="text"
+                name="hotel{{ i }}"
+                id="hotel{{ i }}"
+                [(ngModel)]="day.hotel"
+                required
+              />
+              <div *ngIf="tourForm.controls['hotel+i']?.hasError('required')">
+                <small class="text-danger">Accommodation is required</small>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label-title">Morning Activity</label>
+              <input
+                class="form-control"
+                placeholder="Morning Activity"
+                type="text"
+                name="morning{{ i }}"
+                [(ngModel)]="day.morning"
+                required
+              />
+              <div
+                *ngIf="
+                  tourForm.controls['morning' + i]?.invalid &&
+                  tourForm.controls['morning' + i]?.touched
+                "
+              >
+                <small class="text-danger">Morning Activity is required</small>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label-title">BreakFast</label>
+              <input
+                class="form-control"
+                placeholder="BreakFast"
+                type="text"
+                name="breakfast{{ i }}"
+                [(ngModel)]="day.breakfast"
+                required
+              />
+              <div
+                *ngIf="tourForm.controls['breakfast+i']?.hasError('required')"
+              >
+                <small class="text-danger">BreakFast are required</small>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label-title">Afternoon Activity</label>
+              <input
+                class="form-control"
+                placeholder="Afternoon Activity"
+                type="text"
+                name="afternoon{{ i }}"
+                [(ngModel)]="day.afternoon"
+                required
+              />
+              <div
+                *ngIf="tourForm.controls['afternoon+i']?.hasError('required')"
+              >
+                <small class="text-danger"
+                  >Afternoon Activity are required</small
+                >
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label-title">Lunch</label>
+              <input
+                class="form-control"
+                placeholder="Lunch"
+                type="text"
+                name="lunch{{ i }}"
+                [(ngModel)]="day.lunch"
+                required
+              />
+              <div *ngIf="tourForm.controls['lunch+i']?.hasError('required')">
+                <small class="text-danger">Lunch are required</small>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label-title">Evening Activity</label>
+              <input
+                class="form-control"
+                placeholder="Evening Activity"
+                type="text"
+                name="night{{ i }}"
+                [(ngModel)]="day.night"
+                required
+              />
+              <div *ngIf="tourForm.controls['night+i']?.hasError('required')">
+                <small class="text-danger">Evening Activity are required</small>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label-title">Dinner</label>
+              <input
+                class="form-control"
+                placeholder="Dinner"
+                type="text"
+                name="dinner{{ i }}"
+                [(ngModel)]="day.dinner"
+                required
+              />
+              <div *ngIf="tourForm.controls['dinner+i']?.hasError('required')">
+                <small class="text-danger">Dinner are required</small>
+              </div>
+            </div>
+
+            <!-- <button
+              type="button"
+              class="btn btn-primary"
+              (click)="addItinerary(tourForm.controls)"
+            >
+              {{ "Add Day " + (i + 1) + " Itinerary" }}
+            </button> -->
+          </div>
+        </div>
+        <div class="pt-3">
+          <button
+            class="btn btn-primary"
+            type="submit"
+            [disabled]="tourForm.invalid"
+          >
+            Add
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

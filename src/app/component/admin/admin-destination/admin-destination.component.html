@@ -1,0 +1,27 @@
+<div class="add-tour-container">
+    <div>
+      <button class="add-tour-button" (click)="addNav()"    
+  >Add</button>
+    </div>
+    <div>
+      <table class="tour-list-table">
+        <thead>
+          <th>id</th>
+          <th>Destination Name</th>
+          <th>Image</th>
+          <th>Action</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let destination of destinations">
+            <td>{{destination.id}}</td>
+            <td>{{destination.categoryName}}</td>
+            <td><img src="" alt="" /></td>
+            <td>
+              <button class="tour-action-button" (click)="editDestination(destination)">Edit</button>
+              <button class="tour-action-button delete" (click)="deleteDestination(destination.id!)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

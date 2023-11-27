@@ -1,0 +1,188 @@
+<div class="row">
+  <section class="inner-banner">
+    <div
+      class="image-layer"
+      style="background-image: url(assets/images/banner-image-1.jpg)"
+    ></div>
+    <div class="auto-container">
+      <div class="content-box">
+        <h2>Tour</h2>
+      </div>
+    </div>
+  </section>
+  <section class="page-info">
+    <div class="auto-container">
+      <div class="links">
+        <a>Home</a> &ensp;<i class="fa fa-caret-right"></i>&ensp;
+        <a>Destination</a> &ensp;<i class="fa fa-caret-right"></i> &ensp;<a
+          >Rajasthan</a
+        >
+        &ensp;<i class="fa fa-caret-right"></i>&ensp;
+        <span class="current">Discover Rajasthan</span>
+      </div>
+    </div>
+  </section>
+  <section>
+    <img src="assets/images/banner-3.jpg" width="1000px" alt="" />
+  </section>
+  <div class="d-flex pt-5">
+    <div class="package-info-box style-two">
+      <div
+        class="inner-container d-flex justify-content-between align-items-center"
+      >
+        <!-- Package Info Block -->
+        <div class="package-info-block">
+          <div class="inner-box">
+            <div class="icon"><img src="assets/svg/duration.svg" alt="" /></div>
+            <strong>Duration</strong>
+            {{ tour.days }} Days
+          </div>
+        </div>
+
+        <!-- Package Info Block -->
+        <div class="package-info-block">
+          <div class="inner-box">
+            <div class="icon">
+              <img src="assets/svg/category-icon.svg" alt="" />
+            </div>
+            <strong>Category</strong>
+            {{ tour.category }}
+          </div>
+        </div>
+
+        <div class="pull-left">
+          <h4>{{ tour.tourName }}</h4>
+        </div>
+        <div class="pull-right">
+          <div class="price">{{ tour.price }}</div>
+        </div>
+      </div>
+      <div class="content-column col-xl-8 col-lg-7 col-md-12 col-sm-12">
+        <h5>About {{ tour.tourName }}</h5>
+        <p>
+          {{ tour.tourDescription }}
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="inner-column"
+      style="background-color: #1dc5ce; color: #fff; padding: 20px"
+    >
+      <div class="text-center">
+        <h4 style="color: #fff">Book the tour</h4>
+      </div>
+
+      <form #bookingForm="ngForm" (ngSubmit)="submitForm(bookingForm)">
+        <div class="form-field">
+          <input
+            name="name"
+            placeholder="User Name"
+            type="text"
+            class="form-control"
+            [(ngModel)]="userData.name"
+            required
+          />
+          <div
+            *ngIf="
+              bookingForm.controls['name']?.invalid &&
+              bookingForm.controls['name']?.touched
+            "
+          >
+            <small class="text-danger">name is required</small>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <input
+            name="email"
+            placeholder="Email"
+            type="email"
+            class="form-control"
+            [(ngModel)]="userData.email"
+            required
+            email
+          />
+          <div
+            *ngIf="
+              bookingForm.controls['email']?.invalid &&
+              bookingForm.controls['email']?.touched
+            "
+          >
+            <small class="text-danger">email is required</small>
+          </div>
+        </div>
+        <div class="form-field">
+          <input
+            name="phone"
+            placeholder="phonenumber"
+            type="number"
+            class="form-control"
+            [(ngModel)]="userData.phone"
+            required
+          />
+          <div
+            *ngIf="
+              bookingForm.controls['phone']?.invalid &&
+              bookingForm.controls['phone']?.touched
+            "
+          >
+            <small class="text-danger">phonenumber is required</small>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <input
+            name="dateBook"
+            placeholder="Date"
+            type="date"
+            class="form-control"
+            [(ngModel)]="userData.dateBook"
+            required
+          />
+          <div
+            *ngIf="
+              bookingForm.controls['dateBook']?.invalid &&
+              bookingForm.controls['dateBook']?.touched
+            "
+          >
+            <small class="text-danger">Date is required</small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="item-field-tour-booking">
+            <div class="input-number-ticket">
+              <input
+                type="number"
+                name="number_ticket"
+                value="1"
+                min="1"
+                class="form-control"
+                [(ngModel)]="userData.numberTicket"
+                required
+              />
+
+              <div
+                *ngIf="
+                  bookingForm.controls['number_ticket']?.invalid &&
+                  bookingForm.controls['number_ticket']?.touched
+                "
+              >
+                <small class="text-danger">count is required</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <input
+          class="btn1"
+          type="submit"
+          [disabled]="bookingForm.invalid"
+          value="Booking now"
+        />
+      </form>
+    </div>
+  </div>
+  <footer></footer>
+</div>

@@ -1,0 +1,170 @@
+<!-- <div class="row">
+  <div class="mainbanner"
+  >
+    <div
+      class="container"
+      style="padding-top: 50px; padding-bottom: 50px"
+    >
+      <h1 style="font-size: 5ch">Tours</h1>
+    </div>
+    <div class="container d-flex-column justify-content-center pb-5">
+      <form name="hb-search-form" id="tourBookingFormSearch">
+        <div class="d-flex" style="padding-top: 100px">
+          <div class="pe-5">
+            <input
+              type="text"
+              class="form-control"
+              name="name_tour"
+              value=""
+              placeholder="Tour name"
+            />
+          </div>
+
+          <input type="hidden" name="tour_search" value="1" />
+
+          <div class="pe-5 d-flex">
+            <select class="form-control">
+              <option value="0">Destination</option>
+              <option value="brazil">Brazil</option>
+              <option value="canada">Canada</option>
+              <option value="cuba">Cuba</option>
+              <option value="italy">Italy</option>
+              <option value="philippines">Philippines</option>
+              <option value="usa">USA</option>
+            </select>
+          </div>
+
+          <div class="pe-5 dropdown">
+            <select class="form-control">
+              <option value="0">Month</option>
+              <option value="january">January</option>
+              <option value="february">February</option>
+              <option value="march">March</option>
+              <option value="april">April</option>
+              <option value="may">May</option>
+              <option value="june">June</option>
+              <option value="july">July</option>
+              <option value="august">August</option>
+              <option value="september">September</option>
+              <option value="october">October</option>
+              <option value="november">November</option>
+              <option value="december">December</option>
+            </select>
+          </div>
+          <div>
+            <button type="submit" class="form-control btn">Search Tours</button>
+          </div>
+        </div>
+        <input type="hidden" name="lang" value="" />
+      </form>
+    </div>
+  </div>
+    <div class="container-fluid pb-5 pt-5 mt-5">
+        <div class="d-flex justify-content-evenly">
+          <a class="text-body"  *ngFor="let t of tours">
+            <div
+            class="card"
+            style="width: 300px; height: 450px; border-radius: 0%"
+            (click)="navigateToTour(t.id!)"
+          >
+            <div class="card-img-top text-center" style="width: 18rem">
+              <img
+                width="300px"
+                height="250px"
+                src="https://travelwp.physcode.com/wp-content/uploads/2016/11/205b44a8-0aca-4881-bbb8-0d9ac4814be3-430x323.jpg"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title" >{{t.tourName}}</h5>
+              <span class="post_date">{{t.days}} Days</span>
+              <p class="card-text">
+               {{t.tourDescription}}
+              </p>
+            </div>
+            <div class="card-footer btn">
+              <p>₹-{{t.price}}</p>
+            </div>
+          </div>
+          </a>
+    
+                 </div>
+      </div>
+       <div>
+        <footer></footer>
+       </div>
+    
+    </div> -->
+
+    <div class="row">
+      <section class="inner-banner">
+        <div
+          class="image-layer"
+          style="background-image: url(assets/images/banner-image-1.jpg)"
+        ></div>
+        <div class="auto-container">
+          <div class="content-box">
+            <h2>All Tours</h2>
+            <div class="bread-crumb">
+              <ul class="clearfix">
+                <li><i class="icon-home fa fa-home"></i><a>Home</a></li>
+                <li class="current">>All Tours</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="trekking-section">
+        <div class="auto-container">
+          <div class="title-box centered">
+            <h2><span>Best Treks for you with Trekker</span></h2>
+            <div class="text">
+              Since 2014, we’ve helped more than 500,000 people of all ages enjoy
+              the best outdoor experience of their lives. Whether it’s for one day
+              or a two-week vacation, close to home or a foreign land.
+            </div>
+          </div>
+    
+         
+            <!--Block-->
+            <div
+              class="trek-block-one style-two pe-2 ps-2 col-xl-4 col-lg-6 col-md-6 col-sm-12"
+              style="display: inline-block"  *ngFor="let t of tours"
+            >
+              <div class="inner-box" >
+                <div class="image-box">
+                  <div class="image">
+                    <a (click)="navigateToTour(t.id!)"
+                      ><img src="assets/images/gallery-1.jpg" alt="" title=""
+                    /></a>
+                  </div>
+                  <div class="price"><span>₹{{ t.price }}</span></div>
+                  <div class="info">
+                    <span class="i-block"
+                      ><i class="icon far fa-clock"></i>{{ t.days }} days</span
+                    >
+                    &ensp; | &ensp; <span class="i-block">{{t.category}}</span>
+                  </div>
+                </div>
+                <div class="lower-content">
+                  <h4><a (click)="navigateToTour(t.id!)">{{ t.tourName }}</a></h4>
+                  <div class="text">
+                    {{ t.tourDescription }}
+                  </div>
+                </div>
+                <div class="bottom-box clearfix">
+                  <div class="more-link">
+                    <a (click)="navigateToTour(t.id!)" class="theme-btn"
+                      ><span
+                        >View Details
+                        <i class="icon"
+                          ><img src="assets/svg/logo-icon.svg" alt="" /></i></span
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+     
+        </div>
+      </section>
+      <footer></footer>
+    </div>

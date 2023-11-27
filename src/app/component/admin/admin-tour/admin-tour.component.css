@@ -1,0 +1,58 @@
+/* AddtourComponent styles */
+.add-tour-container {
+    margin: 20px;
+  }
+  
+  .add-tour-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-tour-button:hover {
+    background-color: #45a049;
+  }
+  
+  /* TourListTable styles */
+  .tour-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .tour-list-table th, .tour-list-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .tour-list-table th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Button styles */
+  .tour-action-button {
+    background-color: #3498db;
+    color: white;
+    padding: 8px 12px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .tour-action-button.delete {
+    background-color: #e74c3c;
+  }
+  
+  .tour-action-button:hover {
+    background-color: #2980b9;
+  }
+  
+  .tour-action-button.delete:hover {
+    background-color: #c0392b;
+  }
+  

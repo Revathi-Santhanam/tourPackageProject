@@ -1,0 +1,87 @@
+.inner-banner {
+  position: relative;
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+.inner-banner .image-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+}
+
+.inner-banner .content-box {
+  position: relative;
+  text-align: center;
+}
+
+.inner-banner .content-box h2 {
+  position: relative;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.inner-banner .bread-crumb {
+  position: relative;
+  line-height: 24px;
+  padding-left: 44px;
+}
+
+.inner-banner .bread-crumb .icon-home {
+  position: absolute;
+  left: -44px;
+  top: 0px;
+  width: 34px;
+  height: 34px;
+  font-size: 14px;
+  line-height: 34px;
+  text-align: center;
+  background: #1dc5ce;
+  color: #ffffff;
+  border-radius: 50%;
+}
+
+.inner-banner .bread-crumb ul li {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+  padding: 5px 0;
+  text-transform: capitalize;
+  margin-right: 22px;
+  color: #ffffff;
+}
+
+.inner-banner .bread-crumb ul li:last-child {
+  margin-right: 0;
+}
+
+.inner-banner .bread-crumb ul li:after {
+  position: absolute;
+  right: -24px;
+  top: 6px;
+  width: 22px;
+  text-align: center;
+  font-weight: 700;
+  font-family: "Font Awesome 6 Pro";
+}
+
+.inner-banner .bread-crumb ul li:last-child:after {
+  display: none;
+}
+
+.inner-banner .bread-crumb ul li a {
+  position: relative;
+  color: #ffffff;
+}
+
+.inner-banner .bread-crumb ul li a:hover {
+  text-decoration: underline;
+}

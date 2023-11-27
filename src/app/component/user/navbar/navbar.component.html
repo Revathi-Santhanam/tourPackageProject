@@ -1,0 +1,122 @@
+<div class="row">
+  <div
+    class="navbar navbar-expand-lg bg-primary  shadow"
+  >
+    <div class="d-flex">
+      <div class="nav-item ps-5">
+        <div class="d-flex ps-5">
+          <a
+            class="nav-link text-uppercase text-white"
+            routerLink="/login"
+            routerLinkActive="active"
+            >Login</a
+          >
+          <a
+            class="nav-link text-uppercase text-white"
+            routerLink="/register"
+            routerLinkActive="active"
+            >/Register</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar  navbar-expand-lg bg shadow d-flex justify-content-between">
+   
+      <div>
+        <a class="nav-link text-uppercase" href="#">
+          <img
+            src="assets/svg/logo.svg"
+            width="120px"
+            height="55px"
+          />
+        </a>
+      </div>
+      
+        <div class="navbar-nav pe-5 me-5">
+          <div class="nav-item px-3" [routerLinkActive]="'active-link'">
+            <a
+              class="nav-link text-uppercase"
+              routerLink="/"
+              [ngStyle]="{ color: isActive('/') ? '#1DC5CE' : 'inherit' }"
+            >
+              <i
+                class="fas fa-mountain"
+                *ngIf="isActive('/')"
+                [ngStyle]="{ color: isActive('/') ? '#1DC5CE' : 'inherit' }"
+              ></i>
+              Home
+            </a>
+          </div>
+          <div class="nav-item px-3" [routerLinkActive]="'active-link'">
+            <a
+              class="nav-link text-uppercase"
+              routerLink="/alltour"
+              [ngStyle]="{
+                color: isActive('/alltour') ? '#1DC5CE' : 'inherit'
+              }"
+            >
+              <i
+                class="fas fa-mountain"
+                *ngIf="isActive('/alltour')"
+                [ngStyle]="{
+                  color: isActive('/alltour') ? '#1DC5CE' : 'inherit'
+                }"
+              ></i>
+              Tours
+            </a>
+          </div>
+          <div class="nav-item px-3" [routerLinkActive]="'active-link'">
+            <a
+              class="nav-link text-uppercase"
+              routerLink="/alldestination"
+              [ngStyle]="{
+                color: isActive('/alldestination') ? '#1DC5CE' : 'inherit'
+              }"
+            >
+              <i
+                class="fas fa-mountain"
+                *ngIf="isActive('/alldestination')"
+                [ngStyle]="{
+                  color: isActive('/alldestination') ? '#1DC5CE' : 'inherit'
+                }"
+              ></i>
+              Destinations
+            </a>
+          </div>
+          <div class="nav-item px-3" [routerLinkActive]="'active-link'">
+            <a
+              class="nav-link text-uppercase"
+              routerLink="/blog"
+              [ngStyle]="{
+                color: isActive('/blog') ? '#1DC5CE' : 'inherit'
+              }"
+            >
+              <i
+                class="fas fa-mountain"
+                *ngIf="isActive('/blog')"
+                [ngStyle]="{
+                  color: isActive('/blog') ? '#1DC5CE' : 'inherit'
+                }"
+              ></i>
+              Blog
+            </a>
+          </div>
+        </div>
+        <div class="d-flex">
+          <div
+            class="nav-item pe-4"
+            routerLink="/myaccount"
+            routerLinkActive="active-link"
+          >
+          <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="log text-uppercase  pe-5" (click)="logout()" role="button">
+            
+            <i class="fa-solid fa-power-off"></i>
+          </div>
+    
+      
+    </div>
+  </div>
+</div>

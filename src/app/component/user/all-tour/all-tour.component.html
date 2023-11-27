@@ -1,0 +1,74 @@
+
+<div class="row">
+  <section class="inner-banner">
+    <div
+      class="image-layer"
+      style="background-image: url(assets/images/banner-image-1.jpg)"
+    ></div>
+    <div class="auto-container">
+      <div class="content-box">
+        <h2>All Tours</h2>
+        <div class="bread-crumb">
+          <ul class="clearfix">
+            <li><i class="icon-home fa fa-home"></i><a>Home</a></li>
+            <li class="current">>All Tours</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="trekking-section">
+    <div class="auto-container">
+      <div class="title-box centered">
+        <h2><span>Best Treks for you with Trekker</span></h2>
+        <div class="text">
+          Since 2014, we’ve helped more than 500,000 people of all ages enjoy
+          the best outdoor experience of their lives. Whether it’s for one day
+          or a two-week vacation, close to home or a foreign land.
+        </div>
+      </div>
+
+     
+        <!--Block-->
+        <div
+          class="trek-block-one style-two pe-2 ps-2 col-xl-4 col-lg-6 col-md-6 col-sm-12"
+          style="display: inline-block"  *ngFor="let t of tours"
+        >
+          <div class="inner-box" >
+            <div class="image-box">
+              <div class="image">
+                <a (click)="navigateToTour(t.id!)"
+                  ><img src="assets/images/gallery-1.jpg" alt="" title=""
+                /></a>
+              </div>
+              <div class="price"><span>₹{{ t.price }}</span></div>
+              <div class="info">
+                <span class="i-block"
+                  ><i class="icon far fa-clock"></i>{{ t.days }} days</span
+                >
+                &ensp; | &ensp; <span class="i-block">{{t.category}}</span>
+              </div>
+            </div>
+            <div class="lower-content">
+              <h4><a (click)="navigateToTour(t.id!)">{{ t.tourName }}</a></h4>
+              <div class="text">
+                {{ t.tourDescription }}
+              </div>
+            </div>
+            <div class="bottom-box clearfix">
+              <div class="more-link">
+                <a (click)="navigateToTour(t.id!)" class="theme-btn"
+                  ><span
+                    >View Details
+                    <i class="icon"
+                      ><img src="assets/svg/logo-icon.svg" alt="" /></i></span
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+ 
+    </div>
+  </section>
+  <footer></footer>
+</div>

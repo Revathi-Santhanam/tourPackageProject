@@ -1,0 +1,459 @@
+.form-control,
+.form-control:focus {
+  color: var(--primary-500);
+  background-color: var(--bs-body-bg);
+  outline: 0;
+  border-color: #1dc5ce;
+  border-radius: 0%;
+  width: 250px;
+  height: 50px;
+}
+.main {
+  background-image: url(https://travelwp.physcode.com/wp-content/uploads/2017/02/banner-home3.jpg);
+}
+.btn1 {
+  background-color: #1dc5ce !important;
+  color: white;
+  font-weight: bold;
+}
+.btn {
+  border-color: #1dc5ce !important;
+  background-color: #bcedf0 !important;
+  color: black;
+  border-radius: 50%;
+}
+
+.to-top {
+  bottom: 0;
+  cursor: pointer;
+  margin: 0 8px 12px 0;
+  position: fixed;
+  right: 0;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.show-scrollTop {
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+.to-top {
+  width: 250px;
+  height: 250px;
+}
+.why-section .left-col {
+  position: relative;
+  order: 0;
+}
+
+.why-section .right-col {
+  position: relative;
+  order: 12;
+}
+
+.why-section .image-col {
+  position: relative;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.why-section .image-col .inner {
+  position: relative;
+  display: block;
+  padding-top: 30px;
+}
+.why-section {
+  position: relative;
+}
+
+.why-section.extra-padd {
+  padding-top: 210px;
+}
+
+.why-section .floated-icon {
+  position: absolute;
+}
+
+.why-section .floated-icon.left {
+  left: 35px;
+  bottom: 112px;
+}
+
+.why-section .floated-icon.right {
+  right: 30px;
+  top: 120px;
+}
+
+.why-section .left-col {
+  position: relative;
+  order: 0;
+}
+
+.why-section .right-col {
+  position: relative;
+  order: 12;
+}
+
+.why-section .image-col {
+  position: relative;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.why-section .image-col .inner {
+  position: relative;
+  display: block;
+  padding-top: 30px;
+}
+
+.why-block {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.why-block .inner-box {
+  position: relative;
+  display: block;
+}
+
+.why-block .icon-box {
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+  display: inline-block;
+  transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -webkit-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+}
+
+.why-block .inner-box:hover .icon-box {
+  -webkit-transform: scale(-1) rotate(180deg);
+  -moz-transform: scale(-1) rotate(180deg);
+  -ms-transform: scale(-1) rotate(180deg);
+  -o-transform: scale(-1) rotate(180deg);
+  transform: scale(-1) rotate(180deg);
+}
+
+.why-block h4 {
+  position: relative;
+  color: #10221b;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.why-block .text {
+  position: relative;
+}
+
+@-webkit-keyframes ripple {
+  70% {
+    box-shadow: 0 0 0 70px rgba(253, 167, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(253, 167, 0, 0);
+  }
+}
+
+@keyframes ripple {
+  70% {
+    box-shadow: 0 0 0 70px rgba(253, 167, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(253, 167, 0, 0);
+  }
+}
+
+.theme-btn {
+  display: inline-block;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+@-webkit-keyframes ripple {
+  70% {
+    box-shadow: 0 0 0 70px rgba(253, 167, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(253, 167, 0, 0);
+  }
+}
+
+@keyframes ripple {
+  70% {
+    box-shadow: 0 0 0 70px rgba(253, 167, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(253, 167, 0, 0);
+  }
+}
+.trending-destinations {
+  position: relative;
+
+  background: #f9fcff;
+}
+
+.dest-block-one {
+  position: relative;
+}
+
+.dest-block-one .inner-box {
+  position: relative;
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dest-block-one .image-box {
+  position: relative;
+
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dest-block-one .image-box img {
+  position: relative;
+
+  width: 100%;
+  border-radius: 8px;
+  transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -webkit-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+}
+
+.dest-block-one .inner-box:hover img {
+  transform: scale(1.05, 1.05);
+}
+
+.dest-block-one .hvr-box {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(29, 197, 206, 0.35);
+  border-radius: 8px;
+  z-index: 10;
+
+  transition: all 900ms ease;
+  -moz-transition: all 900ms ease;
+  -webkit-transition: all 900ms ease;
+  -ms-transition: all 900ms ease;
+  -o-transition: all 900ms ease;
+  transition: -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, -webkit-transform 0.4s ease;
+  -webkit-transform: scale(0, 1);
+  -ms-transform: scale(0, 1);
+  transform: scale(0, 1);
+  -webkit-transform-origin: right center;
+  -ms-transform-origin: right center;
+  transform-origin: right center;
+  background-position: center center;
+}
+
+.dest-block-one:hover .hvr-box {
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1);
+  -webkit-transform-origin: left center;
+  -ms-transform-origin: left center;
+  transform-origin: left center;
+}
+
+.dest-block-one .hvr-box .cap-box {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+  right: 30px;
+}
+
+.dest-block-one .hvr-box .cap-inner {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+
+  background: #ffffff;
+  border-radius: 6px;
+}
+
+.dest-block-one .hvr-box h4 {
+  position: relative;
+  float: left;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-bottom: 0;
+  line-height: 36px;
+  padding: 5px 0px;
+}
+
+.dest-block-one .hvr-box h4 a {
+  color: #10221b;
+}
+
+.dest-block-one .hvr-box h4 a:hover {
+  text-decoration: underline;
+}
+
+.dest-block-one .hvr-box .tour-count {
+  position: relative;
+  float: left;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 100px;
+  line-height: 26px;
+  padding: 10px 24px;
+  font-weight: 500;
+  color: #ffffff;
+  background: #1dc5ce;
+  border-radius: 23px;
+}
+
+.dest-block-one .alt-hvr {
+  text-align: center;
+}
+
+.dest-block-one .alt-hvr h4 {
+  float: none;
+}
+
+.dest-block-one .alt-hvr .tour-count {
+  float: none;
+  margin-left: 0;
+  margin-top: 10px;
+}
+.subscribe-section {
+  position: relative;
+  padding: 70px 0px 120px;
+}
+
+.subscribe-section .content-box {
+  position: relative;
+  display: block;
+  padding: 100px 60px 0px 50px;
+  background: #1dc5ce;
+  color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px 0 rgba(29, 197, 206, 0.25);
+}
+
+.subscribe-section .content-box .bg-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+
+.subscribe-section .image-col {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.subscribe-section .image-col .inner {
+  position: relative;
+  display: block;
+}
+
+.subscribe-section .text-col {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.subscribe-section .text-col .inner {
+  position: relative;
+  display: block;
+  padding-top: 20px;
+}
+
+.subscribe-section .title {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.subscribe-section .title .subtitle {
+  position: relative;
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: capitalize;
+  font-family: "Corinthia", cursive;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 10px;
+}
+
+.subscribe-section .title h2 {
+  position: relative;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0 0;
+}
+
+.subscribe-section .title h2 span {
+  position: relative;
+  z-index: 1;
+}
+
+.subscribe-section .title .text {
+  position: relative;
+  display: block;
+  font-weight: 400;
+  font-size: 16px;
+  padding-top: 20px;
+}
+
+.subscribe-section form .form-group input {
+  height: 88px;
+  line-height: 30px;
+  padding: 27px 200px 27px 70px;
+  font-weight: 400;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.subscribe-section form .form-group .field-inner {
+  position: relative;
+}
+
+.subscribe-section form .form-group .alt-icon {
+  position: absolute;
+  left: 25px;
+  top: 29px;
+  line-height: 30px;
+  width: 30px;
+  color: #1dc5ce;
+  font-size: 24px;
+  font-weight: 300;
+  margin: 0 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.subscribe-section form .theme-btn {
+  position: absolute;
+  right: 20px;
+  top: 17px;
+  width: 174px;
+  line-height: 30px;
+  padding: 12px 20px;
+  border: none;
+  background: #1dc5ce;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}

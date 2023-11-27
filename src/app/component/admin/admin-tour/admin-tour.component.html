@@ -1,0 +1,38 @@
+<div class="add-tour-container">
+  <div>
+    <button class="add-tour-button" routerLink="/addtour">Add</button>
+  </div>
+  <div>
+    <table class="tour-list-table">
+      <thead>
+        <th>id</th>
+        <th>tourName</th>
+        <th>tourPhoto</th>
+        <th>Price</th>
+        <th>destination</th>
+        <th>days</th>
+        <th>totalSeats</th>
+        <th>balanceSeats</th>
+        
+        <th>Action</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tour of tours">
+          <td>{{tour.id}}</td>
+          <td>{{tour.tourName}}</td>
+          <td><img src="" alt="" /></td>
+          <td>{{tour.price}}</td>
+          <td>{{tour.category}}</td>
+          <td>{{tour.days}}</td>
+          <td>{{tour.totalSeats}}</td>
+          <td>{{tour.balanceSeats}}</td>
+          <td>
+            <button class="tour-action-button" (click)="editTour(tour)">Edit</button>
+            <button class="tour-action-button delete" (click)="deleteTour(tour.id!)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
