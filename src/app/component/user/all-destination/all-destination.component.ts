@@ -20,7 +20,7 @@ export class AllDestinationComponent {
   getDestinationsForUser() {
     this.destinationService.getDestinationsForUser().subscribe({
       next: (response: any) => {
-        console.log(response.data.categories);
+        // console.log(response.data.categories);
         this.categories = response.data.categories;
         },
       error: (err) => {

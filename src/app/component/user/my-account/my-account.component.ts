@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AnimationOptions } from 'ngx-lottie';
 import { AppUser } from 'src/app/model/appUser';
 import { Booking } from 'src/app/model/booking';
 import { UserDetails } from 'src/app/model/userdetails';
@@ -11,6 +12,9 @@ import { StorageService } from 'src/app/service/storage.service';
   styleUrls: ['./my-account.component.css'],
 })
 export class MyAccountComponent implements OnInit {
+  options: AnimationOptions = {
+    path: '/assets/userprofile.json',
+  };
   constructor(
     private storage: StorageService,
     private bookingService: BookingService

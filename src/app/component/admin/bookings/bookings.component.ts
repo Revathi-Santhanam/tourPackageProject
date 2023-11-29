@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AnimationOptions } from 'ngx-lottie';
 import { Booking } from 'src/app/model/booking';
 import { BookingService } from 'src/app/service/booking.service';
 
@@ -8,8 +9,12 @@ import { BookingService } from 'src/app/service/booking.service';
   styleUrls: ['./bookings.component.css']
 })
 export class BookingsComponent {
+  options: AnimationOptions = {
+    path: '/assets/noData.json',
+  };
   error: string = '';
   bookings: Booking[] = [];
+  totalBookings:number=0;
   bookingDetail: Booking = {
     id: 0,
     username: '',
@@ -35,7 +40,8 @@ export class BookingsComponent {
         let bookings: Booking[] = response.data;
         if (bookings.length > 0) {
           this.bookings = bookings;
-          this.bookingDetail = bookings[0];
+          this.totalBookings=this.bookings.length;
+          // this.bookingDetail = bookings[0];
         }
       },
       error: (err) => {

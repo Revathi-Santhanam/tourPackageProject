@@ -110,11 +110,8 @@
     color: rgb(255, 255, 255);
 }
 
-.db-2-main {
-}
-
 .db-2-main-com {
-    padding: 20px;
+  
     position: relative;
     overflow: hidden;
 }
@@ -123,7 +120,7 @@
     display: block;
     margin: 0px auto 20px;
     border: 1px solid rgb(234, 237, 239);
-    padding: 12px;
+   
     border-radius: 5px;
 }
 
@@ -153,9 +150,6 @@
     display: block;
     color: rgb(51, 51, 51);
     font-size: 13.5px;
-    padding-left: 14px;
+   
 }
 
-.db-2-main-com ul li a:hover {
-    padding-left: 10px;
-}

@@ -56,15 +56,5 @@ export class StorageService {
   public removeCategory(): void {
     localStorage.removeItem('Category');
   }
-  setTour(tour: Tour): void {
-    localStorage.setItem('Tour', JSON.stringify(tour));
-  }
-
-  public getTour(): Tour {
-    return JSON.parse(localStorage.getItem('Tour') || '{}');
-  }
-
-  public removeTour(): void {
-    localStorage.removeItem('Tour');
-  }
+  
 }

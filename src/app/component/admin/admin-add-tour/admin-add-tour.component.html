@@ -12,7 +12,7 @@
             placeholder="Tour Id"
             type="text"
             name="tourId"
-            [(ngModel)]="tourId"
+            [(ngModel)]="tourFormModel.id"
             required
           />
         </div>
@@ -23,7 +23,7 @@
             placeholder="Tour Name"
             type="text"
             name="tourName"
-            [(ngModel)]="tourName"
+            [(ngModel)]="tourFormModel.tourName"
             required
           />
           <div
@@ -42,7 +42,7 @@
             placeholder="CategoryId"
             type="number"
             name="categoryId"
-            [(ngModel)]="categoryId"
+            [(ngModel)]="tourFormModel.categoryId"
             required
           />
           <div
@@ -51,7 +51,7 @@
               tourForm.controls['categoryId']?.touched
             "
           >
-            <small class="text-danger">Tour Name is required</small>
+            <small class="text-danger">categoryId is required</small>
           </div>
         </div>
         <div class="mb-3">
@@ -61,7 +61,7 @@
             placeholder="Destination Name"
             type="text"
             name="destinationName"
-            [(ngModel)]="destinationName"
+            [(ngModel)]="tourFormModel.destination"
             required
           />
           <div
@@ -80,7 +80,7 @@
             placeholder="Tour Description"
             type="text"
             name="tourDescription"
-            [(ngModel)]="tourDescription"
+            [(ngModel)]="tourFormModel.tourDescription"
             required
           />
           <div
@@ -99,7 +99,7 @@
             placeholder="Start date"
             type="date"
             name="departureDate"
-            [(ngModel)]="departureDate"
+            [(ngModel)]="tourFormModel.departureDate"
             required
           />
           <div
@@ -118,7 +118,7 @@
             placeholder="Tour Days"
             type="number"
             name="tourDays"
-            [(ngModel)]="tourDays"
+            [(ngModel)]="tourFormModel.days"
             required
             (change)="getItineraries()"
           />
@@ -138,7 +138,7 @@
             placeholder="Tour Price"
             type="number"
             name="tourPrice"
-            [(ngModel)]="tourPrice"
+            [(ngModel)]="tourFormModel.price"
             required
           />
           <div
@@ -157,7 +157,7 @@
             placeholder="Total Seats"
             type="number"
             name="totalSeats"
-            [(ngModel)]="totalSeats"
+            [(ngModel)]="tourFormModel.totalSeats"
             required
           />
           <div
@@ -169,7 +169,7 @@
             <small class="text-danger">Tour Price is required</small>
           </div>
         </div>
-        <div class="mb-3">
+        <!-- <div class="mb-3">
           <label class="form-label-title">Upload Tour Image</label>
           <div class="file">
             <label class="fileInput"
@@ -177,6 +177,15 @@
               <input class="input" accept="*" type="file" />
             </label>
           </div>
+        </div> -->
+        <div class="form-outline mb-3">
+          <label class="form-label" for="username">Choose Image</label>
+          <input
+            type="file"
+            class="input-file"
+            [(ngModel)]="file"
+            (change)="onFileChange($event)"
+          />
         </div>
 
         <div>
@@ -193,7 +202,7 @@
                 placeholder="Itinerary Id"
                 type="text"
                 name="itineraryId"
-                [(ngModel)]="itineraryId"
+                [(ngModel)]="day.id"
                 required
               />
             </div>
@@ -337,8 +346,9 @@
           <button
             class="btn btn-primary"
             type="submit"
-            [disabled]="tourForm.invalid"
+           
           >
+          <!--  [disabled]="tourForm.invalid" -->
             Add
           </button>
         </div>

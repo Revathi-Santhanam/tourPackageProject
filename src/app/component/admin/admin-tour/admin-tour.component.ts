@@ -13,12 +13,13 @@ export class AdminTourComponent {
   error: string = '';
   tours: Tour[] = [];
   editId:number=0;
+  tourCount:number=0;
   tour: Tour = {
     id: 0,
     tourName: '',
     tourPhoto: undefined,
     price: 0,
-    category: '',
+    destination: '',
     totalSeats: 0,
     balanceSeats: 0,
     days: 0,
@@ -32,6 +33,8 @@ export class AdminTourComponent {
 
   ngOnInit(): void {
     this.getTours();
+  
+    
   }
   getTours() {
     this.tourService.getTours().subscribe({
@@ -39,6 +42,7 @@ export class AdminTourComponent {
         let tours: Tour[] = response.data;
         if (tours.length > 0) {
           this.tours = tours;
+          this.tourCount=this.tours.length;
         }
       },
       error: (err) => {
@@ -47,13 +51,9 @@ export class AdminTourComponent {
       },
     });
   }
-  editTour(tour:Tour){
-    this.storage.setTour(tour);
-    console.log(tour.itineraries);
-    this.router.navigate(['/addtour']);
-    }
+ 
   deleteTour(id: number) {
-    console.log(id);
+    // console.log(id);
     if (id !== undefined) {
       this.tourService.deleteTour(id).subscribe({
         next: (response: any) => {

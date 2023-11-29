@@ -1,12 +1,12 @@
 import { Itineraray } from "./itineraray";
 
 export interface Tour {
-  id?:number;
+  id:number;
   categoryId?:number
   tourName:string;
   tourPhoto?:any;
   price:number;
-  category:string;
+  destination:string;
   totalSeats:number;
   balanceSeats?:number;
   days:number;

@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container d-flex">
   <div class="db-l pt-3">
     <div class="db-l-1">
       <ul>
         <li><img src="assets/images/db-profile.jpg" alt="" /></li>
         <li>Hey,</li>
-        <li>{{userDetail.name}}</li>
+        <li>{{ userDetail.name }}</li>
       </ul>
     </div>
     <div class="db-l-2">
@@ -19,8 +19,8 @@
       </ul>
     </div>
   </div>
-  <div class="pt-3">
-    <div class="db-2">
+  <div class="pt-3" >
+    <div class="db-2" style="width: 600px">
       <div class="db-2-com db-2-main">
         <h4>My Profile</h4>
         <div class="db-2-main-com db-2-main-com-table">
@@ -29,55 +29,61 @@
               <tr>
                 <td>User Name</td>
                 <td>:</td>
-                <td>{{userDetail.name}}</td>
+                <td>{{ userDetail.name }}</td>
               </tr>
               <tr>
                 <td>Email</td>
                 <td>:</td>
-                <td>{{userDetail.username}}</td>
+                <td>{{ userDetail.username }}</td>
               </tr>
               <tr>
                 <td>Phone</td>
                 <td>:</td>
-                <td>{{userDetail.phoneNumber}}</td>
+                <td>{{ userDetail.phoneNumber }}</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
     </div>
+
+ 
+    <div class="pt-5 db-2" style="width: 600px">
+      <div class="db-2-com db-2-main">
+        <h4>Travel Booking</h4>
+        <div class="card-body body">
+          <div class="table-responsive table-desi">
+            <table class="Booking-table table table-striped">
+              <thead>
+                <tr>
+                  <th>id</th>
+                  <th>tour</th>
+                  <th>username</th>
+                  <th>phoneNumber</th>
+                  <th>price</th>
+                  <th>bookingStatus</th>
+                  <th>Ordered At</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let b of bookings">
+                  <td>{{ b.id }}</td>
+                  <td>{{ b.tour }}</td>
+                  <td>{{ b.username }}</td>
+                  <td>{{ b.phoneNumber }}</td>
+                  <td>{{ b.price }}</td>
+                  <td>{{ b.bookingStatus }}</td>
+                  <td>{{ b.createdAt }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
-  <div class="db-2">
-    <div class="db-2-com db-2-main">
-      <h4>Travel Booking</h4>
-      <div class="card-body body">
-        <div class="table-responsive table-desi">
-          <table class="Booking-table table table-striped">
-            <thead>
-              <tr>
-                <th>id</th>
-                <th>tour</th>
-                <th>username</th>
-                <th>phoneNumber</th>
-                <th>price</th>
-                <th>bookingStatus</th>
-                <th>Ordered At</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let b of bookings">
-                <td>{{ b.id }}</td>
-                <td>{{ b.tour }}</td>
-                <td>{{ b.username }}</td>
-                <td>{{ b.phoneNumber }}</td>
-                <td>{{ b.price }}</td>
-                <td>{{ b.bookingStatus }}</td>
-                <td>{{ b.createdAt }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+  <div class="pe-3" >
+    <ng-lottie style="width: 200px; height: 300px" [options]="options"></ng-lottie>
   </div>
 </div>

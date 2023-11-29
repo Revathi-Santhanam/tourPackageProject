@@ -14,9 +14,12 @@ export class AdminDestinationComponent implements OnInit {
 
   destinations: Category[] = [];
   destination:Category={
-    categoryName: ''
+    categoryName: '',
+    categoryPhoto: '',
+    id: 0
   }
   editId:number=0;
+  desCount:number=0;
   constructor(
     private destinationService: DestinationService,
     private router: Router,
@@ -33,8 +36,9 @@ export class AdminDestinationComponent implements OnInit {
   getDestinations() {
     this.destinationService.getDestinations().subscribe({
       next: (response: any) => {
-        console.log(response.data);
+        // console.log(response.data);
         this.destinations = response.data;
+        this.desCount=this.destinations.length;
       },
       error: (err) => {
         let message: string = err?.error?.error?.message;
@@ -43,8 +47,8 @@ export class AdminDestinationComponent implements OnInit {
     });
   }
   deleteDestination(id: number) {
-    console.log(id);
-    if (id !== undefined) {
+    // console.log(id);
+   
       this.destinationService.deleteCategory(id).subscribe({
         next: (response: any) => {
           this.destinations = response.data;
@@ -57,14 +61,11 @@ export class AdminDestinationComponent implements OnInit {
               : message;
         },
       });
-    }
+    
   }
   editDestination(category:Category) {
     this.storage.setCategory(category)
-  //  const checkId = this.destinations.find((num) => num.id === category.id);
-  //   if (checkId) {
-  //     this.destination.categoryName = checkId.categoryName;
-  //   }
+    
     this.router.navigate(['/addDestination']);
   }
 }

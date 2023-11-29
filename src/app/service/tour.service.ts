@@ -26,7 +26,7 @@ export class TourService {
       `${urlEndpoint.baseUrl}/admin/tour/${id}`
     );
   }
-  postTour(tour: Tour): Observable<ApiResponse> {
+  postTour(tour: FormData): Observable<ApiResponse> {
     return this.http.post<ApiResponse>(
       `${urlEndpoint.baseUrl}/admin/tour`,tour
     );

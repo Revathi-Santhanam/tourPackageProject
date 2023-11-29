@@ -15,8 +15,6 @@
             </thead>
             <tbody>
               <tr *ngFor="let user of userDetails">
-                <!--  (click)="setSelectedUser(user)"
-                [ngClass]="user.id === userDetail.id ? 'table-primary' : ''" -->
                 <th scope="row">{{ user.id }}</th>
                 <td>{{ user.name }}</td>
                 <td>{{ user.username }}</td>

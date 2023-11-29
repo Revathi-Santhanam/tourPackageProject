@@ -26,13 +26,15 @@
                 name="destination"
                 (change)="onCategoryChange()"
               >
+                <option value="0">Destination</option>
                 <option *ngFor="let c of categories" [value]="c.id!">
                   {{ c.categoryName }}
                 </option>
               </select>
             </div>
             <div class="d-flex ps-3">
-              <select class="form-control" [(ngModel)]="tourId" name="tour">
+              <select class="form-control text-black" [(ngModel)]="tourId" name="tour">
+                <option value="0">Tour Name</option>
                 <option *ngFor="let tour of filteredTours" [value]="tour.id">
                   {{ tour.tourName }}
                 </option>
@@ -66,7 +68,7 @@
   <section class="trending-destinations">
     <div class="auto-container">
       <div class="title-box centered">
-        <div class="subtitle">Top Destinations</div>
+        <div class="subtitle pt-4">Top Destinations</div>
         <h2><i class="bg-vector"></i><span>Trending Destinations</span></h2>
       </div>
 
@@ -80,7 +82,8 @@
             <div class="inner-box">
               <div class="image-box">
                 <a (click)="navigateToDesTours(c.id!)"
-                  ><img src="assets/images/gallery-1.jpg" alt=""
+                  ><img src="{{'http://localhost:8080/api/admin/category/downloadFile/'+ c.id  }}" width="200px"
+                  height="300px" alt=""
                 /></a>
               </div>
               <div class="hvr-box">

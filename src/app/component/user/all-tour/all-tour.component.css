@@ -1,7 +1,7 @@
 .inner-banner {
   position: relative;
- padding-top: 75px;
- padding-bottom: 75px;
+  padding-top: 75px;
+  padding-bottom: 75px;
 }
 
 .inner-banner .image-layer {
@@ -13,62 +13,6 @@
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
-}
-
-.inner-banner .image-layer:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.3);
-  background: -webkit-linear-gradient(
-    top,
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0.57),
-    rgba(16, 34, 27, 0.35),
-    rgba(16, 34, 27, 1)
-  );
-  background: -ms-linear-gradient(
-    top,
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0.57),
-    rgba(16, 34, 27, 0.35),
-    rgba(16, 34, 27, 1)
-  );
-  background: -moz-linear-gradient(
-    top,
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0.57),
-    rgba(16, 34, 27, 0.35),
-    rgba(16, 34, 27, 1)
-  );
-}
-
-.inner-banner .image-layer:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-  width: 100%;
-  /* background: url("assets/banner-pattern.png")bottom center repeat-x; */
-  height: 39px;
-  z-index: 1;
-  background-repeat: repeat-x;
-  animation: 80s linear 0s infinite normal none running slide;
-}
-
-@keyframes slide {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 3000px 0;
-  }
 }
 
 .inner-banner .content-box {
@@ -120,7 +64,6 @@
 }
 
 .inner-banner .bread-crumb ul li:after {
-  content: "\f0da";
   position: absolute;
   right: -24px;
   top: 6px;
@@ -128,19 +71,6 @@
   text-align: center;
   font-weight: 700;
   font-family: "Font Awesome 6 Pro";
-}
-
-.inner-banner .bread-crumb ul li:last-child:after {
-  display: none;
-}
-
-.inner-banner .bread-crumb ul li a {
-  position: relative;
-  color: #ffffff;
-}
-
-.inner-banner .bread-crumb ul li a:hover {
-  text-decoration: underline;
 }
 .trekking-section{
   position: relative;

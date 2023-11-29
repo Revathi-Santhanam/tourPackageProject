@@ -1,5 +1,9 @@
 
-
+.noData{
+  width: 300px;
+  height: 300px;
+  position: absolute;
+}
 
 .body {
   margin: 20px;

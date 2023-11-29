@@ -16,9 +16,7 @@ import { TourService } from 'src/app/service/tour.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  options: AnimationOptions = {
-    path: '/assets/backToTop.json',
-  };
+ 
   constructor(
     @Inject(DOCUMENT) private document: Document,
     public loaderService: LoaderService,
@@ -41,14 +39,14 @@ export class HomeComponent {
 
   isAdmin: boolean = false;
   isLoggedIn: boolean = false;
-  selectedCategoryId: number | undefined;
+  selectedCategoryId: number =0;
   error: string = '';
 
   categories: Category[] = [];
   categoryId: number = 0;
   tours: Tour[] = [];
   filteredTours: Tour[] = [];
-  tourId: number | null = null;
+  tourId: number | null = 0;
   ngOnInit(): void {
     this.authService.isAdmin$.subscribe((isAdmin) => {
       this.isAdmin = isAdmin;

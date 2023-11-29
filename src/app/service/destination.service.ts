@@ -24,7 +24,7 @@ export class DestinationService {
       `${urlEndpoint.baseUrl}/tour/category/${id}`
     );
   }
-  postCategory(category: Category): Observable<ApiResponse> {
+  postCategory(category: FormData): Observable<ApiResponse> {
     return this.http.post<ApiResponse>(
       `${urlEndpoint.baseUrl}/admin/category`,
       category
@@ -35,10 +35,15 @@ export class DestinationService {
       `${urlEndpoint.baseUrl}/admin/category/${id}`
     );
   }
-  putCategory(category: Category): Observable<ApiResponse> {
+  putCategory(category: FormData): Observable<ApiResponse> {
     return this.http.put<ApiResponse>(
       `${urlEndpoint.baseUrl}/admin/category`,
       category
+    );
+  }
+  getCategoryById(id: number): Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(
+      `${urlEndpoint.baseUrl}/admin/category/${id}`
     );
   }
 }

@@ -1,27 +1,62 @@
 <div class="add-tour-container">
-    <div>
-      <button class="add-tour-button" (click)="addNav()"    
-  >Add</button>
+ 
+  <div class="d-flex justify-content-between">
+    <div
+      class="add-tour-button text-center"
+      (click)="addNav()"
+      style="width: 60px; height: 40px"
+    >
+      <div class="pt-1"><i class="fa-duotone fa-plus"></i>Add</div>
     </div>
-    <div>
-      <table class="tour-list-table">
-        <thead>
-          <th>id</th>
-          <th>Destination Name</th>
-          <th>Image</th>
-          <th>Action</th>
-        </thead>
-        <tbody>
-          <tr *ngFor="let destination of destinations">
-            <td>{{destination.id}}</td>
-            <td>{{destination.categoryName}}</td>
-            <td><img src="" alt="" /></td>
-            <td>
-              <button class="tour-action-button" (click)="editDestination(destination)">Edit</button>
-              <button class="tour-action-button delete" (click)="deleteDestination(destination.id!)">Delete</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="">
+      <div class="count">Total Destination:{{desCount}}</div>
+    </div>
+   
+  </div>
+  <hr>
+</div>
+<!-- 
+
+  backend enable
+  storage service
+  controller
+
+ -->
+<div class="row">
+  <div class="col-4 mt-4" *ngFor="let destination of destinations">
+    <div class="card profile-card-5">
+      <div class="card-img-block">
+        <img
+          class="card-img-top"
+          src="{{'http://localhost:8080/api/admin/category/downloadFile/'+ destination.id  }}"
+          width="400px"
+          height="200px"
+        />
+        <!-- {{"http://localhost:8080/api/admin/category/downloadFile/"+ destination.id  }} -->
+      </div>
+      <div class="card-body pt-0">
+        <h5 class="card-title">
+          Des Id:{{ destination.id }}<br />
+          Destination:{{ destination.categoryName }}
+        </h5>
+      </div>
+
+      <div class="d-flex pb-3 justify-content-evenly">
+        <div
+          type="button"
+          class="btn btn-info"
+          (click)="editDestination(destination)"
+        >
+          <i class="fas fa-edit text-white"></i>
+        </div>
+        <div
+          type="button"
+          class="btn btn-danger"
+          (click)="deleteDestination(destination.id)"
+        >
+          <i class="fa fa-close"></i>
+        </div>
+      </div>
     </div>
   </div>
+</div>

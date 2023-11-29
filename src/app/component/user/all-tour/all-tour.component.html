@@ -13,6 +13,7 @@
             <li><i class="icon-home fa fa-home"></i><a>Home</a></li>
             <li class="current">>All Tours</li>
           </ul>
+        
         </div>
       </div>
     </div>
@@ -38,7 +39,7 @@
             <div class="image-box">
               <div class="image">
                 <a (click)="navigateToTour(t.id!)"
-                  ><img src="assets/images/gallery-1.jpg" alt="" title=""
+                  ><img src="{{'http://localhost:8080/api/admin/tour/downloadFile/'+ t.id  }}" alt="" title=""
                 /></a>
               </div>
               <div class="price"><span>₹{{ t.price }}</span></div>
@@ -46,7 +47,7 @@
                 <span class="i-block"
                   ><i class="icon far fa-clock"></i>{{ t.days }} days</span
                 >
-                &ensp; | &ensp; <span class="i-block">{{t.category}}</span>
+                &ensp; | &ensp; <span class="i-block">{{t.destination}}</span>
               </div>
             </div>
             <div class="lower-content">

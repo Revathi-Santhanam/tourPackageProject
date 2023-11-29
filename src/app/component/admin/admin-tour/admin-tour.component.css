@@ -33,26 +33,112 @@
     background-color: #f2f2f2;
   }
   
-  /* Button styles */
-  .tour-action-button {
-    background-color: #3498db;
-    color: white;
-    padding: 8px 12px;
-    margin-right: 5px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
+ 
+  .profile-card-5 .btn {
+    border-radius: 2px;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 7px 20px;
+  }
+  .profile-card-5 .card-img-block {
+    width: 91%;
+    margin: 0 auto;
+    position: relative;
+    top: -20px;
+  }
+  .profile-card-5 .card-img-block img {
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.63);
+  }
+  .profile-card-5 h5 {
+    color: #4e5e30;
+    font-weight: 600;
+  }
+  .profile-card-5 p {
+    font-size: 14px;
+    font-weight: 300;
+  }
+   
+  .btn.btn-info:hover {
+    box-shadow: 0 14px 26px -12px rgba(0,188,212,.42),
+                0 4px 23px 0 rgba(0,0,0,.12),
+                0 8px 10px -5px rgba(0,188,212,.2) !important;
+    background: #00aec5 !important;
   }
   
-  .tour-action-button.delete {
-    background-color: #e74c3c;
+  
+  .btn.btn-danger:hover {
+  box-shadow: 0 14px 26px -12px rgba(244,67,54,.42), 
+              0 4px 23px 0 rgba(0,0,0,.12), 
+              0 8px 10px -5px rgba(244,67,54,.2) !important;
+  background-color: #f33527 !important;            
+  
   }
   
-  .tour-action-button:hover {
-    background-color: #2980b9;
-  }
   
-  .tour-action-button.delete:hover {
-    background-color: #c0392b;
-  }
+  .btn.btn-danger {
+  color: #fff !important;
+  background-color: #f44336 !important;
+  border-color: #f44336;
+  height: 25px;
+  width: 75px;
+  box-shadow: 0 2px 2px 0 rgba(244,67,54,.14), 
+              0 3px 1px -2px rgba(244,67,54,.2), 
+              0 1px 5px 0 rgba(244,67,54,.12) !important;
   
+  }
+  .btn.btn-info {
+  color: #fff !important;
+  background-color: #00bcd4 !important;
+  border-color: #00bcd4;
+  height: 25px;
+  width: 75px;
+  box-shadow: 0 2px 2px 0 rgba(0,188,212,.14),
+              0 3px 1px -2px rgba(0,188,212,.2),
+              0 1px 5px 0 rgba(0,188,212,.12) !important;
+  
+  }
+
+:host {
+  padding-bottom: 10px;
+  display: block;
+  height: 520px; /* Set the desired height for the scrollable area */
+  overflow: auto;
+  overflow-x: hidden; /* Enable vertical scrolling */
+  /* border: 1px solid #ccc; Optional: Add a border for visual clarity */
+}
+/* Styling for the scrollbar */
+:host::-webkit-scrollbar {
+  width: 12px; /* Set the width of the scrollbar */
+}
+
+:host::-webkit-scrollbar-thumb {
+  background-color: #c7e8ea; /* Set the color of the thumb */
+  border-radius: 6px; /* Set the border radius of the thumb */
+}
+
+:host::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Set the color of the track */
+}
+
+.count {
+  border: 2px solid #3498db; /* Border color */
+  background: linear-gradient(to right, #3498db, #c0392b); /* Gradient background */
+  padding: 10px; /* Add padding for better visual appearance */
+  margin-bottom: 20px; /* Add margin for spacing */
+  border-radius: 8px; /* Optional: Add border-radius for rounded corners */
+  color: #fff; /* Text color */
+}
+
+.add-tour-button {
+  background-color: #2ecc71; /* Button background color */
+  color: #fff; /* Button text color */
+  padding: 5px 10px; /* Adjust padding as needed */
+  border: none; /* Remove button border */
+  cursor: pointer;
+  border-radius: 4px; /* Optional: Add border-radius for rounded corners */
+}
+
+.add-tour-button:hover {
+  background-color: #27ae60; /* Button background color on hover */
+}

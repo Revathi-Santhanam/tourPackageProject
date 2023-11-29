@@ -1,13 +1,11 @@
 
-
-
-
-  <div class="card-body body">
+<div *ngIf="totalBookings">
+  <div>Total Bookings:{{ totalBookings }}</div>
+  <div  class="card-body body">
     <div class="table-responsive table-desi">
       <table class="Booking-table table table-striped">
         <thead>
           <tr>
-         
             <th>id</th>
             <th>tour</th>
             <th>userId</th>
@@ -21,19 +19,22 @@
         </thead>
         <tbody>
           <tr *ngFor="let b of bookings">
-           <td>{{b.id}}</td>
-           <td>{{b.tour}}</td>
-           <td>{{b.userId}}</td>
-           <td>{{b.name}}</td>
-           <td>{{b.username}}</td>
-           <td>{{b.phoneNumber}}</td>
-           <td>{{b.price}}</td>
-           <td>{{b.bookingStatus}}</td>
-           <td>{{b.createdAt}}</td>
+            <td>{{ b.id }}</td>
+            <td>{{ b.tour }}</td>
+            <td>{{ b.userId }}</td>
+            <td>{{ b.name }}</td>
+            <td>{{ b.username }}</td>
+            <td>{{ b.phoneNumber }}</td>
+            <td>{{ b.price }}</td>
+            <td>{{ b.bookingStatus }}</td>
+            <td>{{ b.createdAt }}</td>
           </tr>
           <!-- Add more table rows as needed -->
         </tbody>
       </table>
     </div>
   </div>
-
+</div>
+<div *ngIf="!totalBookings" class="noData ps-5 ms-5 pt-5 text-center">
+  <ng-lottie [options]="options"></ng-lottie>
+</div>

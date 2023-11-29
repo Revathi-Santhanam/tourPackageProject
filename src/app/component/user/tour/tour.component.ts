@@ -28,7 +28,7 @@ export class TourComponent implements OnInit {
     tourName: '',
     tourPhoto: undefined,
     price: 0,
-    category: '',
+    destination: '',
     totalSeats: 0,
     balanceSeats: 0,
     days: 0,
