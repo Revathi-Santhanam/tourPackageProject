@@ -1,23 +1,159 @@
-.card{
+/* .card{
   width: 300px;
   height: 100px;
+  display: flex;
   background-color: #c7e8ea !important;
   transition: transform 0.3s ease-in-out;
+  justify-content: center;
 }
 .icon-container {
   position: relative;
-  width: 48px; /* Set the desired width of the circle */
-  height: 48px; /* Set the desired height of the circle */
-  background-color: rgb(191, 208, 215); /* Set the background color of the circle */
-  border-radius: 50%; /* Make it a circle with border-radius */
+  width: 48px; 
+  height: 48px; 
+  background-color: rgb(191, 208, 215);
+  border-radius: 50%; 
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 10px; /* Adjust the margin based on your layout */
+  margin-right: 10px; 
 }
 
 .card-hovered {
   transform: scale(1.1);
+} */
+
+
+.radius-10 {
+  border-radius: 10px !important;
+}
+
+.border-info {
+  border-left: 5px solid  #0dcaf0 !important;
+}
+.border-danger {
+  border-left: 5px solid  #fd3550 !important;
+}
+.border-success {
+  border-left: 5px solid  #15ca20 !important;
+}
+.border-warning {
+  border-left: 5px solid  #ffc107 !important;
+}
+
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0px solid rgba(0, 0, 0, 0);
+  border-radius: .25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px 0 rgb(218 218 253 / 65%), 0 2px 6px 0 rgb(206 206 238 / 54%);
+}
+.bg-gradient-scooter {
+  background: #17ead9;
+  background: -webkit-linear-gradient( 
+45deg
+, #17ead9, #6078ea)!important;
+  background: linear-gradient( 
+45deg
+, #17ead9, #6078ea)!important;
+}
+.widgets-icons-2 {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ededed;
+  font-size: 27px;
+  border-radius: 10px;
+}
+.rounded-circle {
+  border-radius: 50%!important;
+}
+.text-white {
+  color: #fff!important;
+}
+.ms-auto {
+  margin-left: auto!important;
+}
+.bg-gradient-bloody {
+  background: #f54ea2;
+  background: -webkit-linear-gradient( 
+45deg
+, #f54ea2, #ff7676)!important;
+  background: linear-gradient( 
+45deg
+, #f54ea2, #ff7676)!important;
+}
+
+.bg-gradient-ohhappiness {
+  background: #00b09b;
+  background: -webkit-linear-gradient( 
+45deg
+, #00b09b, #96c93d)!important;
+  background: linear-gradient( 
+45deg
+, #00b09b, #96c93d)!important;
+}
+
+.bg-gradient-blooker {
+  background: #ffdf40;
+  background: -webkit-linear-gradient( 
+45deg
+, #ffdf40, #ff8359)!important;
+  background: linear-gradient( 
+45deg
+, #ffdf40, #ff8359)!important;
+}
+:host {
+  padding-bottom: 10px;
+  display: block;
+  height: 520px; /* Set the desired height for the scrollable area */
+  overflow: auto;
+  overflow-x: hidden; /* Enable vertical scrolling */
+  /* border: 1px solid #ccc; Optional: Add a border for visual clarity */
+}
+/* Styling for the scrollbar */
+:host::-webkit-scrollbar {
+  width: 12px; /* Set the width of the scrollbar */
+}
+
+:host::-webkit-scrollbar-thumb {
+  background-color: #c7e8ea; /* Set the color of the thumb */
+  border-radius: 6px; /* Set the border radius of the thumb */
+}
+
+:host::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Set the color of the track */
+}
+.table-desi {
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.Booking-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  
+}
+
+.Booking-table th,
+.Booking-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.Booking-table th {
+  background-color:var(--primary-300) !important;
+  color: black;
 }
 
 

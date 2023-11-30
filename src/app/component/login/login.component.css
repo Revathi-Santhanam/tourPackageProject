@@ -56,6 +56,14 @@ label {
 
 .btn{
   background-color:  var(--primary-300);
-  color: black;
+  color: white;
+  font-weight: bold;
+}
+.reg{
+  color: rgb(0, 162, 255);
+}
+.btn1 {
+  background-color: #1dc5ce !important;
+  color: white;
   font-weight: bold;
 }

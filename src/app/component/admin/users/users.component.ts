@@ -18,6 +18,8 @@ export class UsersComponent {
     createdAt: '',
     phoneNumber: 0,
   };
+  totalUsers: number=0;
+  
 
   constructor(private usersService: UsersService) {}
 
@@ -30,6 +32,7 @@ export class UsersComponent {
         let userDetails: UserDetails[] = response.data;
         if (userDetails.length > 0) {
           this.userDetails = userDetails;
+          this.totalUsers=this.userDetails.length;
           // this.userDetail = userDetails[0];
         }
       },

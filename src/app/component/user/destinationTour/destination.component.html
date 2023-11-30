@@ -134,7 +134,9 @@
                 <div class="image-box">
                   <div class="image">
                     <a (click)="navigateToTour(t.id!)"
-                      ><img src="{{'http://localhost:8080/api/admin/tour/downloadFile/'+ t.id  }}" alt="" title=""
+                      ><img src="{{'http://localhost:8080/api/admin/tour/downloadFile/'+ t.id  }}" 
+                      width="200px"
+                  height="250px" alt="" title=""
                     /></a>
                   </div>
                   <div class="price"><span>₹{{ t.price }}</span></div>
@@ -147,8 +149,17 @@
                 </div>
                 <div class="lower-content">
                   <h4><a (click)="navigateToTour(t.id!)">{{ t.tourName }}</a></h4>
-                  <div class="text">
-                    {{ t.tourDescription }}
+                  <div class="d-flex">
+                    <div>
+                      <i class="fa-solid fa-hotel fa-2x"></i>
+                    </div>
+                    <div class="ps-3">
+                      <i class="fa-solid fa-map-marked-alt fa-2x"></i>
+                    </div>
+                    <div class="ps-3"><i class="fa-solid fa-atlas fa-2x"></i></div>
+                    <div class="ps-3">
+                      <i class="fa-solid fa-bowl-rice fa-2x"></i>
+                    </div>
                   </div>
                 </div>
                 <div class="bottom-box clearfix">

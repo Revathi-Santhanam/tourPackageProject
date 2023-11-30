@@ -1,6 +1,7 @@
 
   .nav-link{
     font-weight: bold;
+    color: #2d2c2b;
   }
 
   .bg-primary{
@@ -9,7 +10,20 @@
   .bg{
     background-color: white;
   }
-
+  .actived {
+    color: var(--primary-300) !important; 
+  }
+  .nav-link:hover{
+    color: var(--primary-300) !important; 
+  }
+  .fa-solid {
+    color: #2d2c2b;
+  }
+  .fa-solid:hover{
+    color: var(--primary-300) !important; 
+  }
+  
+  
 
 
  

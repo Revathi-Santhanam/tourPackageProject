@@ -1,15 +1,33 @@
-
-.noData{
-  width: 300px;
-  height: 300px;
-  position: absolute;
+.lottie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  padding-bottom: 70px;
+}
+:host {
+  padding-bottom: 10px;
+  display: block;
+  height: 520px; /* Set the desired height for the scrollable area */
+  overflow: auto;
+  overflow-x: hidden; /* Enable vertical scrolling */
+  /* border: 1px solid #ccc; Optional: Add a border for visual clarity */
+}
+/* Styling for the scrollbar */
+:host::-webkit-scrollbar {
+  width: 12px; /* Set the width of the scrollbar */
 }
 
-.body {
-  margin: 20px;
-  background-color: #f8f9fa;
-  border-radius: 5px;
+:host::-webkit-scrollbar-thumb {
+  background-color: #c7e8ea; /* Set the color of the thumb */
+  border-radius: 6px; /* Set the border radius of the thumb */
 }
+
+:host::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Set the color of the track */
+}
+
+
 
 .table-desi {
   margin-top: 20px;
@@ -35,24 +53,5 @@
   color: black;
 }
 
-.status {
-  display: inline-block;
-  padding: 6px 10px;
-  border-radius: 5px;
-  font-size: 12px;
-}
 
-.status--past {
-  background-color: #f8d7da;
-  color: #721c24;
-}
 
-.status--cancel {
-  background-color: #d6d8d9;
-  color: #495057;
-}
-
-.status--upcoming {
-  background-color: #cce5ff;
-  color: #004085;
-}

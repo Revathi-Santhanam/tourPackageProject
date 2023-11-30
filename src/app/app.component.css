@@ -1,0 +1,18 @@
+.lottie-container {
+  position: absolute;
+  min-height: 100vh;
+  min-width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+
+.lottie-booking {
+  width: 300px !important;
+  height: 300px !important;
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

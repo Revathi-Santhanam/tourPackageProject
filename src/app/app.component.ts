@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AnimationOptions } from 'ngx-lottie';
 import { AuthService } from './service/auth.service';
 import { LoaderService } from './service/loader.service';
+import { BookingLoaderService } from './service/interceptor/booking-loader.service';
 
 @Component({
   selector: 'app-root',
@@ -16,12 +17,20 @@ export class AppComponent implements OnInit {
     },
   };
 
+  optionsBooking: AnimationOptions = {
+    path: '/assets/booking.json',
+    rendererSettings: {
+      className: 'lottie-booking',
+    },
+  };
+
   isAdmin: boolean = false;
   isLoggedIn: boolean = false;
 
   constructor(
     private authService: AuthService,
-    public loaderService: LoaderService
+    public loaderService: LoaderService,
+    public bookingService: BookingLoaderService
   ) {}
 
   ngOnInit(): void {

@@ -21,13 +21,11 @@ export class DestinationComponent implements OnInit {
   ngOnInit(): void {
     const categoryId = this.route.snapshot.paramMap.get('id');
     this.categoryId = parseInt(categoryId!);
-    console.log(this.categoryId);
     this.getDestinationTour();
   }
   getDestinationTour() {
     this.destinationService.getDestinationTour(this.categoryId!).subscribe({
       next: (response: any) => {
-        console.log(response.data);
         this.tours = response.data;
       },
       error: (err) => {

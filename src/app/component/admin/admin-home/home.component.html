@@ -1,13 +1,18 @@
-<div class="row pt-5 ps-5 pb-5 ms-5">
+<!-- <div class="row pt-5 ps-5 pb-5 ms-5">
   <div class="col-1"></div>
   <div class="col-6 d-flex justify-content-evenly card">
     <div class="icon-container"><i class="fa-regular fa-user"></i></div>
     <div>Customers</div>
   </div>
   <div class="col-1"></div>
-  <div class="col-6 d-flex justify-content-evenly card">
-    <div class="icon-container"><i class="fa-regular fa-user"></i></div>
-    <div>Customers</div>
+  <div class="col-6 card">
+    <div class="d-flex justify-content-between">
+      <div>
+        <div class="icon-container"><i class="fa-regular fa-user"></i></div>
+      <div>Customers</div>
+      </div>
+      <div>20</div>
+    </div>
   </div>
  
 </div>
@@ -22,4 +27,101 @@
     <div class="icon-container"><i class="fa-regular fa-user"></i></div>
     <div>Customers</div>
   </div>
-</div>
+</div> -->
+
+<div class="container pt-5">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4">
+         <div class="col">
+       <div class="card radius-10 border-start border-0 border-3 border-info">
+        <div class="card-body">
+          <div class="d-flex align-items-center">
+            <div>
+              <p class="mb-0 text-secondary">Total Bookings</p>
+              <h4 class="my-1 text-info">{{ totalBookings}}</h4>
+            </div>
+            <div class="widgets-icons-2 rounded-circle bg-gradient-scooter text-white ms-auto"><i class="fa fa-shopping-cart"></i>
+            </div>
+          </div>
+        </div>
+       </div>
+       </div>
+       <div class="col">
+      <div class="card radius-10 border-start border-0 border-3 border-danger">
+         <div class="card-body">
+           <div class="d-flex align-items-center">
+             <div>
+               <p class="mb-0 text-secondary">Total Revenue</p>
+               <h4 class="my-1 text-danger">₹{{revenue}}</h4>
+             </div>
+             <div class="widgets-icons-2 rounded-circle bg-gradient-bloody text-white ms-auto"><i class="fa fa-dollar"></i>
+             </div>
+           </div>
+         </div>
+      </div>
+      </div>
+      <div class="col">
+      <div class="card radius-10 border-start border-0 border-3 border-success">
+         <div class="card-body">
+           <div class="d-flex align-items-center">
+             <div>
+               <p class="mb-0 text-secondary">Total tours</p>
+               <h4 class="my-1 text-success">{{tourCount}}</h4>
+             </div>
+             <div class="widgets-icons-2 rounded-circle bg-gradient-ohhappiness text-white ms-auto"><i class="fa fa-bar-chart"></i>
+             </div>
+           </div>
+         </div>
+      </div>
+      </div>
+      <div class="col">
+      <div class="card radius-10 border-start border-0 border-3 border-warning">
+         <div class="card-body">
+           <div class="d-flex align-items-center">
+             <div>
+               <p class="mb-0 text-secondary">Total Customers</p>
+               <h4 class="my-1 text-warning">{{totalUsers}}</h4>
+              
+             </div>
+             <div class="widgets-icons-2 rounded-circle bg-gradient-blooker text-white ms-auto"><i class="fa fa-users"></i>
+             </div>
+           </div>
+         </div>
+      </div>
+      </div> 
+    </div>
+  </div>
+  <div>
+    <div  class="card-body body">
+      <div class="table-responsive table-desi">
+        <table class="Booking-table table table-striped">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Tour</th>
+              
+              <th>Name</th>
+              <th>Username</th>
+              <th>PhoneNumber</th>
+              <th>Price</th>
+              <th>BookingStatus</th>
+              <th>Ordered At</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let b of bookings">
+              <td>{{ b.id }}</td>
+              <td>{{ b.tour }}</td>
+              
+              <td>{{ b.name }}</td>
+              <td>{{ b.username }}</td>
+              <td>{{ b.phoneNumber }}</td>
+              <td>{{ b.price }}</td>
+              <td>{{ b.bookingStatus }}</td>
+              <td>{{ b.createdAt }}</td>
+            </tr>
+            <!-- Add more table rows as needed -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

@@ -12,8 +12,9 @@ import { StorageService } from 'src/app/service/storage.service';
   styleUrls: ['./my-account.component.css'],
 })
 export class MyAccountComponent implements OnInit {
+
   options: AnimationOptions = {
-    path: '/assets/userprofile.json',
+    path: '/assets/profile.json',
   };
   constructor(
     private storage: StorageService,

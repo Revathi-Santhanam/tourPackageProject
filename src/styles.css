@@ -118,7 +118,7 @@ body {
 .sideBarActive,
 .sideBarActive > a,
 .sideBarActive > a:hover,
-.sideBarActive > a:active {
+.sideBarActive > li:active {
   color: var(--primary-500);
   background-color: var(--primary-50) !important;
   padding: 8px;
@@ -129,10 +129,13 @@ body {
   color: var(--primary-500);
   padding: 8px;
 }
-
-.sideBarItem > a:hover {
-  color: var(--primary-500);
+.active {
+  background-color: var(--primary-100); 
 }
+
+/* .sideBarItem > a:hover {
+  color: var(--primary-500);
+} */
 
 .sideBarActive > .fa-solid {
   color: var(--primary-500);

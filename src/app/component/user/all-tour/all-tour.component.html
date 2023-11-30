@@ -1,4 +1,3 @@
-
 <div class="row">
   <section class="inner-banner">
     <div
@@ -9,18 +8,22 @@
       <div class="content-box">
         <h2>All Tours</h2>
         <div class="bread-crumb">
-          <ul class="clearfix">
-            <li><i class="icon-home fa fa-home"></i><a>Home</a></li>
-            <li class="current">>All Tours</li>
+          <ul>
+            <li>
+              <i class="icon-home fa fa-home"></i
+              ><a class="text-white text-decoration-none" routerLink="/"
+                >Home</a
+              >
+            </li>
+            <li class="pe-3">>All Tours</li>
           </ul>
-        
         </div>
       </div>
     </div>
   </section>
-  <section class="trekking-section">
+  <section class="trekking-section pt-5 mt-5">
     <div class="auto-container">
-      <div class="title-box centered">
+      <div class="title-box centered pb-5">
         <h2><span>Best Treks for you with Trekker</span></h2>
         <div class="text">
           Since 2014, we’ve helped more than 500,000 people of all ages enjoy
@@ -29,46 +32,65 @@
         </div>
       </div>
 
-     
-        <!--Block-->
-        <div
-          class="trek-block-one style-two pe-2 ps-2 col-xl-4 col-lg-6 col-md-6 col-sm-12"
-          style="display: inline-block"  *ngFor="let t of tours"
-        >
-          <div class="inner-box" >
-            <div class="image-box">
-              <div class="image">
-                <a (click)="navigateToTour(t.id!)"
-                  ><img src="{{'http://localhost:8080/api/admin/tour/downloadFile/'+ t.id  }}" alt="" title=""
-                /></a>
-              </div>
-              <div class="price"><span>₹{{ t.price }}</span></div>
-              <div class="info">
-                <span class="i-block"
-                  ><i class="icon far fa-clock"></i>{{ t.days }} days</span
-                >
-                &ensp; | &ensp; <span class="i-block">{{t.destination}}</span>
-              </div>
+      <!--Block-->
+      <div
+        class="trek-block-one style-two pe-2 ps-2 col-xl-4 col-lg-6 col-md-6 col-sm-12"
+        style="display: inline-block"
+        *ngFor="let t of tours"
+      >
+        <div class="inner-box">
+          <div class="image-box">
+            <div class="image">
+              <a (click)="navigateToTour(t.id!)"
+                ><img
+                  src="{{
+                    'http://localhost:8080/api/admin/tour/downloadFile/' + t.id
+                  }}"
+                  width="200px"
+                  height="250px"
+                  alt=""
+                  title=""
+              /></a>
             </div>
-            <div class="lower-content">
-              <h4><a (click)="navigateToTour(t.id!)">{{ t.tourName }}</a></h4>
-              <div class="text">
-                {{ t.tourDescription }}
-              </div>
+            <div class="price">
+              <span>₹{{ t.price }}</span>
             </div>
-            <div class="bottom-box clearfix">
-              <div class="more-link">
-                <a (click)="navigateToTour(t.id!)" class="theme-btn"
-                  ><span
-                    >View Details
-                    <i class="icon"
-                      ><img src="assets/svg/logo-icon.svg" alt="" /></i></span
-                ></a>
+            <div class="info">
+              <span class="i-block"
+                ><i class="icon far fa-clock"></i>{{ t.days }} days</span
+              >
+              &ensp; | &ensp; <span class="i-block">{{ t.destination }}</span>
+            </div>
+          </div>
+          <div class="lower-content">
+            <h4>
+              <a (click)="navigateToTour(t.id!)">{{ t.tourName }}</a>
+            </h4>
+            <div class="d-flex">
+              <div>
+                <i class="fa-solid fa-hotel fa-2x"></i>
+              </div>
+              <div class="ps-3">
+                <i class="fa-solid fa-map-marked-alt fa-2x"></i>
+              </div>
+              <div class="ps-3"><i class="fa-solid fa-atlas fa-2x"></i></div>
+              <div class="ps-3">
+                <i class="fa-solid fa-bowl-rice fa-2x"></i>
               </div>
             </div>
           </div>
+          <div class="bottom-box clearfix">
+            <div class="more-link">
+              <a (click)="navigateToTour(t.id!)" class="theme-btn"
+                ><span
+                  >View Details
+                  <i class="icon"
+                    ><img src="assets/svg/logo-icon.svg" alt="" /></i></span
+              ></a>
+            </div>
+          </div>
         </div>
- 
+      </div>
     </div>
   </section>
   <footer></footer>

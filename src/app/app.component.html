@@ -3,41 +3,69 @@
 </div>
 <!-- *ngIf="isLoggedIn" -->
 
-<div  class="container-fluid vh-100 d-flex flex-column" *ngIf="isLoggedIn">
- <navbar *ngIf="!isAdmin"></navbar>
- <admin-navbar *ngIf="isAdmin"></admin-navbar>
+<div *ngIf="!isAdmin && bookingService.getBooking()">
+  <div class="lottie-container">
+    <div class="lottie-booking">
+      <ng-lottie [options]="optionsBooking"></ng-lottie>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid vh-100 d-flex flex-column" *ngIf="isLoggedIn">
+  <navbar *ngIf="!isAdmin"></navbar>
+  <admin-navbar *ngIf="isAdmin"></admin-navbar>
 
   <div *ngIf="isAdmin" class="row flex-grow-1">
     <div class="sidebar border border-right col-2 p-0">
       <div class="bg-body-tertiary h-100" tabindex="-1">
         <div>
           <div>
-            <img src="" alt="">
+            <img src="" alt="" />
           </div>
         </div>
         <div class="d-flex flex-column p-0 pt-3 overflow-y-auto">
           <ul class="nav flex-column">
-            <li class="nav-item d-flex align-items-center px-4 sideBarItem" routerLink="/admin">
+            <li
+              class="nav-item d-flex align-items-center px-4 sideBarItem"
+              routerLink="/admin"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
               <i class="fa-solid fa-house"></i>
-              <a class="nav-link d-flex align-items-center" > Dashboard </a>
+              <a class="nav-link d-flex align-items-center"> Dashboard </a>
             </li>
-            <li class="nav-item d-flex align-items-center px-4 sideBarItem" routerLink="admin/destination">
+            <li
+              class="nav-item d-flex align-items-center px-4 sideBarItem"
+              routerLink="admin/destination"
+              routerLinkActive="active"
+            >
               <i class="fa-solid fa-book"></i>
-              <a class="nav-link d-flex align-items-center" >Destinations </a>
+              <a class="nav-link d-flex align-items-center">Destinations </a>
             </li>
-            <li class="nav-item d-flex align-items-center px-4 sideBarItem" routerLink="admin/tour">
+            <li
+              class="nav-item d-flex align-items-center px-4 sideBarItem"
+              routerLink="admin/tour"
+              routerLinkActive="active"
+            >
               <i class="fa-solid fa-umbrella-beach"></i>
-              <a class="nav-link d-flex align-items-center" >Tours</a>
+              <a class="nav-link d-flex align-items-center">Tours</a>
             </li>
-            <li class="nav-item d-flex align-items-center px-4 sideBarItem" routerLink="admin/users">
+            <li
+              class="nav-item d-flex align-items-center px-4 sideBarItem"
+              routerLink="admin/users"
+              routerLinkActive="active"
+            >
               <i class="fa-solid fa-user"></i>
-              <a class="nav-link d-flex align-items-center" >Users</a>
+              <a class="nav-link d-flex align-items-center">Users</a>
             </li>
-            <li class="nav-item d-flex align-items-center px-4 sideBarItem" routerLink="admin/booking">
+            <li
+              class="nav-item d-flex align-items-center px-4 sideBarItem"
+              routerLink="admin/booking"
+              routerLinkActive="active"
+            >
               <i class="fa-solid fa-clock-rotate-left"></i>
-              <a class="nav-link d-flex align-items-center" >Bookings</a>
+              <a class="nav-link d-flex align-items-center">Bookings</a>
             </li>
-           
           </ul>
         </div>
       </div>
@@ -49,10 +77,7 @@
   <div *ngIf="!isAdmin">
     <router-outlet></router-outlet>
   </div>
-
 </div>
-
-
 
 <div *ngIf="loaderService.isLoading | async" class="loader">
   <ng-lottie [options]="options"></ng-lottie>

@@ -21,7 +21,6 @@ export class AllTourComponent {
   getAllToursForUsers() {
     this.tourService.getAllToursForUsers().subscribe({
       next: (response: any) => {
-        console.log(response.data);
         this.tours = response.data;
         },
       error: (err) => {

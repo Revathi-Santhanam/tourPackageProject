@@ -52,9 +52,8 @@
     height: 40px;
   }
   
-  .btn{
-    background-color: var(--primary-300);
-    color: black;
+  .btn1 {
+    background-color: #1dc5ce !important;
+    color: white;
     font-weight: bold;
   }
-  

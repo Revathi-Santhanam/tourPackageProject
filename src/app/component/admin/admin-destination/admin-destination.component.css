@@ -94,30 +94,30 @@ box-shadow: 0 2px 2px 0 rgba(0,188,212,.14),
 }
 
 :host::-webkit-scrollbar-thumb {
-  background-color: #c7e8ea; /* Set the color of the thumb */
-  border-radius: 6px; /* Set the border radius of the thumb */
+  background-color: #c7e8ea; 
+  border-radius: 6px; 
 }
 
 :host::-webkit-scrollbar-track {
-  background-color: #f1f1f1; /* Set the color of the track */
+  background-color: #f1f1f1; 
 }
 
 .count {
-  border: 2px solid #3498db; /* Border color */
-  background: linear-gradient(to right, #3498db, #c0392b); /* Gradient background */
-  padding: 10px; /* Add padding for better visual appearance */
-  margin-bottom: 20px; /* Add margin for spacing */
-  border-radius: 8px; /* Optional: Add border-radius for rounded corners */
-  color: #fff; /* Text color */
+  border: 2px solid #1DC5CE; 
+  background: linear-gradient(to right, #c7e8ea, #f5f3f3); 
+  padding: 10px;
+  margin-bottom: 20px; 
+  border-radius: 8px; 
+  color: black; 
 }
 
 .add-tour-button {
-  background-color: #2ecc71; /* Button background color */
-  color: #fff; /* Button text color */
-  padding: 5px 10px; /* Adjust padding as needed */
-  border: none; /* Remove button border */
+  background-color: #2ecc71; 
+  color: #fff; 
+  padding: 5px 10px; 
+  border: none; 
   cursor: pointer;
-  border-radius: 4px; /* Optional: Add border-radius for rounded corners */
+  border-radius: 4px; 
 }
 
 .add-tour-button:hover {

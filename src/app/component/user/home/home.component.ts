@@ -62,7 +62,6 @@ export class HomeComponent {
   getAllToursForUsers() {
     this.tourService.getAllToursForUsers().subscribe({
       next: (response: any) => {
-        console.log(response.data);
         this.tours = response.data;
         this.filteredTours = this.tours;
       },
@@ -74,7 +73,6 @@ export class HomeComponent {
   }
 
   onCategoryChange() {
-    console.log(this.selectedCategoryId);
     this.categoryId = this.selectedCategoryId!;
     this.filterTour();
   }
@@ -82,13 +80,12 @@ export class HomeComponent {
     this.filteredTours = this.tours.filter(
       (tour) => tour.categoryId === +this.categoryId
     );
-    console.log(this.filteredTours);
+   
   }
 
   getDestinationsForUser() {
     this.destinationService.getDestinationsForUser().subscribe({
       next: (response: any) => {
-        console.log(response.data.categories);
         this.categories = response.data.categories;
       },
       error: (err) => {
@@ -105,7 +102,6 @@ export class HomeComponent {
   }
   searchTours() {
     if (this.tourId !== null) {
-      console.log('Selected Tour ID:', this.tourId);
       this.router.navigate(['/tour', this.tourId]);
     }
   }

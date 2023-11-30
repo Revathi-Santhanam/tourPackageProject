@@ -12,10 +12,10 @@
         style="font-size: 20px; color: #ffffff; text-align: center"
         class="pt-4"
       >
-        Find tours, book tour online and payment with more options.
+        Find tours, book tour online and  with more options.
       </p>
     </div>
-    <div class="d-flex pb-5">
+    <div class="d-flex pb-5" style="padding-left: 122px;">
       <div class="container justify-content-center pb-5">
         <form name="hb-search-form" id="tourBookingFormSearch">
           <div class="d-flex pb-5" style="padding-top: 100px">
@@ -53,15 +53,7 @@
           </div>
         </form>
       </div>
-      <div class="pe-5 me-5 pb-2">
-        <img
-          src="assets/svg/banner-image-1.svg "
-          width="200px"
-          height="250px"
-          alt=""
-          title=""
-        />
-      </div>
+  
     </div>
   </div>
   <!--  -->
@@ -79,7 +71,7 @@
             class="dest-block-one masonry-item col-lg-6 pb-3 col-md-12 col-sm-12"
             *ngFor="let c of categories"
           >
-            <div class="inner-box">
+            <div class="inner-box" (click)="navigateToDesTours(c.id!)">
               <div class="image-box">
                 <a (click)="navigateToDesTours(c.id!)"
                   ><img src="{{'http://localhost:8080/api/admin/category/downloadFile/'+ c.id  }}" width="200px"
@@ -90,7 +82,7 @@
                 <div class="cap-box">
                   <div class="cap-inner clearfix">
                     <h4>
-                      <a (click)="navigateToDesTours(c.id!)">{{
+                      <a class="text-decoration-none ps-2 pe-2" (click)="navigateToDesTours(c.id!)">{{
                         c.categoryName
                       }}</a>
                     </h4>
@@ -115,7 +107,7 @@
     <div class="auto-container">
       <div class="title-box centered">
         <div class="subtitle">We Are Awesome</div>
-        <h2><i class="bg-vector"></i><span>Why Choose Tourism</span></h2>
+        <h2><i class="bg-vector"></i><span>Why Choose Treker</span></h2>
       </div>
 
       <div class="row clearfix">

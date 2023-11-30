@@ -53,9 +53,9 @@
   display: inline-block;
   vertical-align: top;
   line-height: 24px;
-  padding: 5px 0;
+  
   text-transform: capitalize;
-  margin-right: 22px;
+ 
   color: #ffffff;
 }
 
@@ -63,16 +63,7 @@
   margin-right: 0;
 }
 
-.inner-banner .bread-crumb ul li:after {
-  position: absolute;
-  right: -24px;
-  top: 6px;
-  width: 22px;
-  text-align: center;
-  font-weight: 700;
-  font-family: "Font Awesome 6 Pro";
-}
-.trekking-section{
+-section{
   position: relative;
   
 }

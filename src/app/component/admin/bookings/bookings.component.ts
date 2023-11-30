@@ -4,7 +4,7 @@ import { Booking } from 'src/app/model/booking';
 import { BookingService } from 'src/app/service/booking.service';
 
 @Component({
-  selector: 'app-bookings',
+  selector: 'bookings',
   templateUrl: './bookings.component.html',
   styleUrls: ['./bookings.component.css']
 })

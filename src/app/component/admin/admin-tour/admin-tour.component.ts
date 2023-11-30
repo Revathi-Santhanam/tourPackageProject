@@ -24,7 +24,7 @@ export class AdminTourComponent {
     balanceSeats: 0,
     days: 0,
     tourDescription: '',
-    itineraries: []
+    itineraryList: []
   };
 
   constructor(private tourService: TourService,
@@ -35,6 +35,9 @@ export class AdminTourComponent {
     this.getTours();
   
     
+  }
+  addNav() {
+    this.router.navigate(['/addTour']);
   }
   getTours() {
     this.tourService.getTours().subscribe({

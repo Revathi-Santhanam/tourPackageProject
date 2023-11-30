@@ -119,20 +119,7 @@
   margin-right: 0;
 }
 
-.inner-banner .bread-crumb ul li:after {
-  content: "\f0da";
-  position: absolute;
-  right: -24px;
-  top: 6px;
-  width: 22px;
-  text-align: center;
-  font-weight: 700;
-  font-family: "Font Awesome 6 Pro";
-}
 
-.inner-banner .bread-crumb ul li:last-child:after {
-  display: none;
-}
 
 .inner-banner .bread-crumb ul li a {
   position: relative;

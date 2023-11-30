@@ -34,7 +34,7 @@ export class AdminAddTourComponent {
   itineraries: Itineraray[] = [];
   tourFormModel: Tour = {
     id: 0,
-    itineraries: [],
+    itineraryList: [],
     tourName: '',
     price: 0,
     destination: '',
@@ -73,14 +73,16 @@ export class AdminAddTourComponent {
   }
 
   submitForm(tourForm: NgForm): void {
-    console.log(this.tourFormModel.itineraries);
+   
+   
     
     const formData = new FormData();
     formData.append('tourPhoto', this.file);
     formData.append('id', this.tourFormModel.id.toString());
     formData.append('tourName', this.tourFormModel.tourName);
     formData.append('destination', this.tourFormModel.destination);
-    formData.append('itineraries',JSON.stringify(this.tourFormModel.itineraries))
+    formData.append('itineraries',JSON.stringify(this.itineraries))
+    console.log("log",JSON.stringify(this.itineraries));
     formData.append('categoryId', this.tourFormModel.categoryId?.toString()!);
     formData.append('price',this.tourFormModel.price.toString())
     formData.append('totalSeats',this.tourFormModel.totalSeats.toString())
@@ -91,9 +93,7 @@ export class AdminAddTourComponent {
   
       this.tourService.postTour(formData).subscribe({
         next: (response: ApiResponse) => {
-          console.log(response.data);
-
-          tourForm.reset();
+          // console.log(response.data);
           this.router.navigate(['/admin/tour']);
         },
         complete: () => {},

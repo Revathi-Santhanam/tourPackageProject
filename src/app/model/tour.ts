@@ -12,5 +12,5 @@ export interface Tour {
   days:number;
   departureDate?:Date;
   tourDescription:string;
-  itineraries:Itineraray[];
+  itineraryList:Itineraray[];
 }
