@@ -26,6 +26,7 @@ and manage travel packages for exciting destinations around the world.Also, Admi
 **Screenshots**
 
  <img src="assets/ScreenShots/login.png">
+<img width="960" alt="adminBooking" src="https://github.com/Revathi-Santhanam/tourPackageProject/assets/145537456/e474a616-b987-4979-856d-79726592d361">
 
 
 **Challenges**
