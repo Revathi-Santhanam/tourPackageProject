@@ -81,8 +81,7 @@ export class AdminAddTourComponent {
     formData.append('id', this.tourFormModel.id.toString());
     formData.append('tourName', this.tourFormModel.tourName);
     formData.append('destination', this.tourFormModel.destination);
-    formData.append('itineraries',JSON.stringify(this.itineraries))
-    console.log("log",JSON.stringify(this.itineraries));
+    formData.append('itineraries',JSON.stringify(this.itineraries));
     formData.append('categoryId', this.tourFormModel.categoryId?.toString()!);
     formData.append('price',this.tourFormModel.price.toString())
     formData.append('totalSeats',this.tourFormModel.totalSeats.toString())
