@@ -106,7 +106,7 @@ and manage travel packages for exciting destinations around the world.Also, Admi
 
 **MySQL Schema**
 
-    👉 Image of schema
+    
 
 Demo Video Url
 
