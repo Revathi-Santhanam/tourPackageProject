@@ -25,7 +25,7 @@ and manage travel packages for exciting destinations around the world.Also, Admi
 
 **Screenshots**
 
-<img width="960" alt="adminhome" src="https://github.com/Revathi-Santhanam/tourPackageProject/assets/145537456/a8bb51ca-7082-428f-9c2d-bb34cfd80ab7">
+<img  alt="adminhome" src="https://github.com/Revathi-Santhanam/tourPackageProject/assets/145537456/a8bb51ca-7082-428f-9c2d-bb34cfd80ab7">
 <img width="960" alt="adminTour" src="https://github.com/Revathi-Santhanam/tourPackageProject/assets/145537456/0ac64f2f-f6d3-4ac0-8941-0ecb75b02da6">
 <img width="960" alt="Blog" src="https://github.com/Revathi-Santhanam/tourPackageProject/assets/145537456/e4ab3716-4d69-4bbd-ba09-f880bf6afb3f">
 <img width="960" alt="home" src="https://github.com/Revathi-Santhanam/tourPackageProject/assets/145537456/63afc737-07f0-4f1a-a193-2c5b243fbcfb">
