@@ -25,7 +25,7 @@ and manage travel packages for exciting destinations around the world.Also, Admi
 
 **Screenshots**
 
-    🔗 <img src="assets/ScreenShots/login.png">
+ <img src="assets/ScreenShots/login.png">
 
 
 **Challenges**
