@@ -63,31 +63,46 @@ export class MyAccountComponent implements OnInit {
   }
   downloadInvoice(): void {
     const invoiceData = this.generateInvoiceData();
-    const blob = new Blob([invoiceData], { type: 'application/pdf' });
-
-    const link = document.createElement('a');
-    link.href = window.URL.createObjectURL(blob);
-    link.download = 'ticket_invoice.pdf';
-    link.click();
+    const printWindow = window.open('', '_blank');
+    
+    if (printWindow) {
+      printWindow.document.open();
+      printWindow.document.write(`
+        <html>
+          <head>
+            <title>Ticket Invoice</title>
+          </head>
+          <body>
+            ${invoiceData}
+          </body>
+        </html>
+      `);
+      printWindow.document.close();
+      printWindow.print();
+    } else {
+      console.error('Unable to open new window for printing.');
+    }
   }
+  
   private generateInvoiceData(): string {
-    
-   
     return `
-    Ticket Invoice
-    Invoice Number: ${this.invoiceNumber}
-    Date: ${this.currentDate}
-    
-    Customer Information
-    Name: ${this.userDetail.name}
-    Email: ${this.userDetail.username}
-    
-    Tour Information
-    Tour Name: ${this.tourName}
-    Tour Date: ${this.date}
-    Price: ${this.price}
-    Booking Status: ${this.bookingStatus}`;
+      <h2>Ticket Invoice</h2>
+      <p><strong>Invoice Number:</strong> ${this.invoiceNumber}</p>
+      <p><strong>Date:</strong> ${this.currentDate}</p>
+  
+      <h3>Customer Information</h3>
+      <p><strong>Name:</strong> ${this.userDetail.name}</p>
+      <p><strong>Email:</strong> ${this.userDetail.username}</p>
+  
+      <h3>Tour Information</h3>
+      <p><strong>Tour Name:</strong> ${this.tourName}</p>
+      <p><strong>Tour Date:</strong> ${this.date}</p>
+      <p><strong>Price:</strong> ${this.price}</p>
+      <p><strong>Booking Status:</strong> ${this.bookingStatus}</p>
+    `;
   }
+  
+  
   getUserBookingDetails() {
     this.bookingService.getBookingUserDetails(this.id).subscribe({
       next: (response: any) => {
