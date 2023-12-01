@@ -73,7 +73,10 @@ export class HomeComponent {
   }
 
   onCategoryChange() {
+    console.log(this.selectedCategoryId);
+    
     this.categoryId = this.selectedCategoryId!;
+    
     this.filterTour();
   }
   filterTour() {

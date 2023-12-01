@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { AnimationOptions } from 'ngx-lottie';
 import { AuthService } from './service/auth.service';
 import { LoaderService } from './service/loader.service';

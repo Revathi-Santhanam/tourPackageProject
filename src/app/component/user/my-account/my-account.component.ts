@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+ 
 import { AnimationOptions } from 'ngx-lottie';
 import { AppUser } from 'src/app/model/appUser';
 import { Booking } from 'src/app/model/booking';
@@ -16,6 +17,9 @@ export class MyAccountComponent implements OnInit {
   options: AnimationOptions = {
     path: '/assets/profile.json',
   };
+  optionsInvoice: AnimationOptions = {
+    path: '/assets/ticket.json',
+  };
   constructor(
     private storage: StorageService,
     private bookingService: BookingService
@@ -31,11 +35,58 @@ export class MyAccountComponent implements OnInit {
     phoneNumber: 0,
     password: ''
   }
+  bookingStatus:string=''
+  tourName:string=''
+  price:number=0;
+  invoiceNumber:string='';
+  currentDate=new Date();
+  date:string='';
+  
+  isPopupVisible: boolean = false;
+
+  togglePopup(booking:Booking) {
+    this.invoiceNumber=this.bookingService.generateRandomInvoiceNumber();
+    this.tourName=booking.tour;
+    this.date=booking.departureDate;
+    this.bookingStatus=booking.bookingStatus;
+    this.price=booking.price;
+    this.isPopupVisible = !this.isPopupVisible;
+  }
+  togglePopupClose(){
+    this.isPopupVisible = !this.isPopupVisible;
+  }
 
   ngOnInit(): void {
     console.log();
     this.userDetail=this.storage.getLoggedInUser()
     this.getUserBookingDetails();
+  }
+  downloadInvoice(): void {
+    const invoiceData = this.generateInvoiceData();
+    const blob = new Blob([invoiceData], { type: 'application/pdf' });
+
+    const link = document.createElement('a');
+    link.href = window.URL.createObjectURL(blob);
+    link.download = 'ticket_invoice.pdf';
+    link.click();
+  }
+  private generateInvoiceData(): string {
+    
+   
+    return `
+    Ticket Invoice
+    Invoice Number: ${this.invoiceNumber}
+    Date: ${this.currentDate}
+    
+    Customer Information
+    Name: ${this.userDetail.name}
+    Email: ${this.userDetail.username}
+    
+    Tour Information
+    Tour Name: ${this.tourName}
+    Tour Date: ${this.date}
+    Price: ${this.price}
+    Booking Status: ${this.bookingStatus}`;
   }
   getUserBookingDetails() {
     this.bookingService.getBookingUserDetails(this.id).subscribe({
@@ -50,4 +101,33 @@ export class MyAccountComponent implements OnInit {
       },
     });
   }
+  // downloadInvoice(): void {
+  //   pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
+  //   const docDefinition = {
+  //     content: [
+  //       'Ticket Invoice',
+  //       { text: `Invoice Number: ${this.invoiceNumber}`, bold: true },
+  //       { text: `Date: ${this.currentDate }`, bold: true },
+  //       'Customer Information',
+  //       `Name: ${this.userDetail.name}`,
+  //       `Email: ${this.userDetail.username}`,
+  //       'Tour Information',
+  //       `Tour Name: ${this.tourName}`,
+  //       `Tour Date: ${this.date}`,
+  //       `Price: ${this.price}`,
+  //       `Booking Status: ${this.bookingStatus}`,
+  //       'Terms and Conditions',
+  //       {
+  //         ul: [
+  //           'Order can be returned within a maximum of 10 days.',
+  //           'Warranty of the product will be subject to the manufacturer terms and conditions.',
+  //           'This is a system-generated invoice.'
+  //         ]
+  //       }
+  //     ]
+  //   };
+
+  //   pdfMake.createPdf(docDefinition).download('ticket_invoice.pdf');
+  // }
 }

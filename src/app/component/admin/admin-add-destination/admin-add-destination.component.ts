@@ -92,11 +92,7 @@ export class AdminAddDestinationComponent {
     }
     
   }
-  onFileChange(event: any) {
-    const fileInput = event.target.files[0];
-    this.file = fileInput;
-
-  }
+  
   hideToast(): void {
     this.showToast = false;
   }

@@ -19,68 +19,97 @@
       </ul>
     </div>
   </div>
-  <div class="pt-3 ps-5" >
-  <div class="pb-3">
-    <div class="card pb-4" style="width: 700px;">
-      <div class="card-header">
-        My Profile
+  <div class="pt-3 ps-5">
+    <div class="pb-3">
+      <div class="card pb-4" style="width: 700px">
+        <div class="card-header">My Profile</div>
+        <div class="card-body">
+          <table class="Booking-table">
+            <tbody>
+              <tr class="pb-2">
+                <td>User Name</td>
+                <td>:</td>
+                <td>{{ userDetail.name }}</td>
+              </tr>
+              <tr class="pb-2">
+                <td>Email</td>
+                <td>:</td>
+                <td>{{ userDetail.username }}</td>
+              </tr>
+              <tr class="pb-2">
+                <td>Phone</td>
+                <td>:</td>
+                <td>{{ userDetail.phoneNumber }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-      <div class="card-body">
-        <table class="Booking-table">
-          <tbody>
-            <tr class="pb-2">
-              <td>User Name</td>
-              <td>:</td>
-              <td>{{ userDetail.name }}</td>
-            </tr >
-            <tr class="pb-2">
-              <td>Email</td>
-              <td>:</td>
-              <td>{{ userDetail.username }}</td>
-            </tr>
-            <tr class="pb-2">
-              <td>Phone</td>
-              <td>:</td>
-              <td>{{ userDetail.phoneNumber }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div> 
-  </div>
+    </div>
     <div class="card">
-      <div class="card-header">
-        Travel Booking
-      </div>
+      <div class="card-header">Travel Booking</div>
       <div class="card-body">
         <table class="Booking-table table table-striped">
           <thead>
             <tr>
               <th>tour</th>
               <th>username</th>
-              <th>phoneNumber</th>
               <th>price</th>
               <th>bookingStatus</th>
               <th>Ordered At</th>
+              <th>Invoice</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let b of bookings">
               <td>{{ b.tour }}</td>
               <td>{{ b.username }}</td>
-              <td>{{ b.phoneNumber }}</td>
               <td>{{ b.price }}</td>
               <td>{{ b.bookingStatus }}</td>
               <td>{{ b.createdAt }}</td>
+              <td><button class="btn1" (click)="togglePopup(b)">Download</button></td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
-
- 
-   
-
   </div>
- 
+</div>
+
+<div *ngIf="isPopupVisible" class="popup-container">
+  <div class="popup invoice-container">
+    <h4>Ticket Invoice</h4>
+    <!-- <div style="width: 200px; padding-left: 100px">
+      <ng-lottie [options]="optionsInvoice"></ng-lottie>
+    </div> -->
+    <hr />
+    <div class="invoice-details">
+      <div>
+        <strong>Invoice Number&nbsp;:&nbsp;</strong> {{ invoiceNumber }}
+      </div>
+      <div>
+        <strong>Date&nbsp;:&nbsp;</strong
+        >{{ currentDate | date : "yyyy-MM-dd" }}
+      </div>
+    </div>
+    <hr />
+    <div class="customer-details">
+      <h4>Customer Information</h4>
+      <div><strong>Name&nbsp;:&nbsp;</strong> {{ userDetail.name }}</div>
+      <div><strong>Email&nbsp;:&nbsp;</strong> {{ userDetail.username }}</div>
+    </div>
+    <hr />
+
+    <div class="tour-details">
+      <h4>Tour Information</h4>
+      <div><strong>Tour Name:</strong>{{tourName}}</div>
+      <div><strong>Tour Date:</strong>{{date}}</div>
+      <div><strong>Price:</strong>{{price}}</div>
+      <div><strong>Booking Status:</strong>{{bookingStatus}}</div>
+    </div>
+    <div class="d-flex justify-content-evenly">
+      <div><button class="btn btn-danger" (click)="togglePopupClose()">close</button></div>
+     <div> <button class="btn btn-success" (click)="downloadInvoice()">Download</button></div>
+    </div>
+  </div>
 </div>

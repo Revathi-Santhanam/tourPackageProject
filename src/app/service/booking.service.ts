@@ -20,4 +20,17 @@ export class BookingService {
   postBookingDetails(booking:UserBooking): Observable<ApiResponse> {
     return this.http.post<ApiResponse>(`${urlEndpoint.baseUrl}/history`,booking);
   }
+  generateRandomInvoiceNumber(): string {
+    
+    const length = 8;
+    const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let result = '';
+
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * charset.length);
+      result += charset[randomIndex];
+    }
+
+    return result;
+  }
 }

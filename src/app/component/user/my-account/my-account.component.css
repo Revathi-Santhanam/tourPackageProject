@@ -95,5 +95,46 @@
     background-color:  var(--primary-300)!important;
 }
 
+  
+  .invoice-details, .customer-details, .tour-details {
+    margin-bottom: 20px;
+  }
+  
+  .invoice-details, .customer-details, .tour-details div {
+    margin-bottom: 10px;
+  }
+  .popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Ensure it's above other content */
+  }
+  
+  .popup {
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+ 
+   
+    margin: auto;
+    max-height: 800px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  .btn1 {
+    background-color: #1dc5ce !important;
+    color: white;
+    font-weight: bold;
+  }
+  
 
 
