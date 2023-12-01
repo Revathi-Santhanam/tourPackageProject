@@ -94,7 +94,8 @@ and manage travel packages for exciting destinations around the world.Also, Admi
              To send a image we need to send it in formdata format, but
              in form data we can't send it as array for that, for that we need to
              convert into string and set at backend by set it back as array and store.
-    🚩 Internal server error for java persisitance exception for date - Solved it by converting the date format.🚩 Internal server error hibernate nested exception - Solved it by reworking on the modal mapping.
+    🚩 Internal server error for java persisitance exception for date - Solved it by converting the date format.
+    🚩 Internal server error hibernate nested exception - Solved it by reworking on the modal mapping.
     🚩 Internal server error for delete nested entities - Solved it by adding cascade type ALL.
     🚩 Altering the entity and updating it.
     🚩 Handling logic for more than 1 row found for one to one mapping.
@@ -106,7 +107,8 @@ and manage travel packages for exciting destinations around the world.Also, Admi
 
 **MySQL Schema**
 
-    
+    <img width="960" alt="sql" src="https://github.com/Revathi-Santhanam/tourPackageProject/assets/145537456/7fa69048-337a-47a5-bdbe-93b5c521deb8">
+
 
 Demo Video Url
 
