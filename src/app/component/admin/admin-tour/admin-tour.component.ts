@@ -37,7 +37,7 @@ export class AdminTourComponent {
     
   }
   addNav() {
-    this.router.navigate(['/addTour']);
+    this.router.navigate(['/addtour']);
   }
   getTours() {
     this.tourService.getTours().subscribe({
