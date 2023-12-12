@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 import player from 'lottie-web';
 import { LottieModule } from 'ngx-lottie';
@@ -30,7 +31,6 @@ import { BookingsComponent } from './component/admin/bookings/bookings.component
 import { AdminAddTourComponent } from './component/admin/admin-add-tour/admin-add-tour.component';
 import { AdminAddDestinationComponent } from './component/admin/admin-add-destination/admin-add-destination.component';
 import { BlogComponent } from './component/user/blog/blog.component';
-
 
 export function playerFactory() {
   return player;
@@ -66,6 +66,14 @@ export function playerFactory() {
     ReactiveFormsModule,
     HttpClientModule,
     LottieModule.forRoot({ player: playerFactory }),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-top-right', 
+      preventDuplicates: true, 
+      closeButton: true, 
+      progressBar: true, 
+      timeOut: 7000, 
+    }),
   ],
   providers: [
     {

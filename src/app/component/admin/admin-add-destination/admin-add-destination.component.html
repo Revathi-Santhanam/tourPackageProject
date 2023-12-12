@@ -4,15 +4,7 @@
       <h5>Add Destination</h5>
     </div>
     
-      <div class="toast" *ngIf="showToast">
-        <div class="toast-header">
-          <strong class="me-auto">{{ toastTitle }}</strong>
-          <button type="button" class="btn-close" aria-label="Close" (click)="hideToast()"></button>
-        </div>
-        <div class="toast-body">
-          {{ toastMessage }}
-        </div>
-      </div>
+     
    
    
     <div class="card-body">
@@ -37,14 +29,6 @@
             [(ngModel)]="categoryModel.categoryName"
             required
           />
-          <div
-            *ngIf="
-              destinationForm.controls['categoryName'].invalid &&
-              destinationForm.controls['categoryName'].touched
-            "
-          >
-            <small class="text-danger">Destination Name is required</small>
-          </div>
         </div>
 
        
@@ -53,7 +37,8 @@
           <input
             type="file"
             class="input-file"
-            
+            [(ngModel)]="file"
+            (change)="onFileChange($event)"
           />
         </div>
 
@@ -65,6 +50,7 @@
         {{btnRef}}
         </button>
       </form>
+   
     </div>
   </div>
 </div>
