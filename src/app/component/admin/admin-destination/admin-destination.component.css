@@ -83,14 +83,12 @@ box-shadow: 0 2px 2px 0 rgba(0,188,212,.14),
 :host {
   padding-bottom: 10px;
   display: block;
-  height: 520px; /* Set the desired height for the scrollable area */
+  height: 675px;
   overflow: auto;
-  overflow-x: hidden; /* Enable vertical scrolling */
-  /* border: 1px solid #ccc; Optional: Add a border for visual clarity */
-}
-/* Styling for the scrollbar */
+  overflow-x: hidden;}
+
 :host::-webkit-scrollbar {
-  width: 12px; /* Set the width of the scrollbar */
+  width: 12px;
 }
 
 :host::-webkit-scrollbar-thumb {

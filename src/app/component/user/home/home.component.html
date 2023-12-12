@@ -15,7 +15,7 @@
         Find tours, book tour online and  with more options.
       </p>
     </div>
-    <div class="d-flex pb-5" style="padding-left: 122px;">
+    <div class="d-flex pb-5" style="padding-left: 250px;">
       <div class="container justify-content-center pb-5">
         <form name="hb-search-form" id="tourBookingFormSearch">
           <div class="d-flex pb-5" style="padding-top: 100px">
@@ -46,6 +46,7 @@
                 type="submit"
                 class="form-control btn1"
                 (click)="searchTours()"
+                [disabled]="selectedCategoryId === 0 || tourId === 0"
               >
                 Search Tours
               </button>
@@ -64,7 +65,7 @@
         <h2><i class="bg-vector"></i><span>Trending Destinations</span></h2>
       </div>
 
-      <div class="gallery-box">
+      <div class="gallery-box" style="padding-left: 50px;padding-right: 50px;">
         <div class="masonry-container row clearfix" style="position: relative">
           <!--Block-->
           <div

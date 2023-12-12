@@ -10,6 +10,8 @@
 }
 .main {
   background-image: url(https://travelwp.physcode.com/wp-content/uploads/2017/02/banner-home3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .btn1 {
   background-color: #1dc5ce !important;

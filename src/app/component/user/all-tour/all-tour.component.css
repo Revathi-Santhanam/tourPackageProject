@@ -305,5 +305,40 @@
 .trek-block-one .bottom-box .video-link a:hover{
   color: #1DC5CE;
 }
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+
+
+.pagination-button {
+  color: #ffffff; 
+  background-color: #1DC5CE; 
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination-button:hover {
+  background-color: #1DC5CE; 
+}
+
+.pagination-button:disabled {
+  color: #808080; 
+  background-color: #c0c0c0; 
+  cursor: not-allowed;
+}
+
+.pagination-page {
+  color: #1DC5CE; 
+  font-weight: bold;
+}
+
 
 

@@ -1,26 +1,3 @@
-/* .card{
-  width: 300px;
-  height: 100px;
-  display: flex;
-  background-color: #c7e8ea !important;
-  transition: transform 0.3s ease-in-out;
-  justify-content: center;
-}
-.icon-container {
-  position: relative;
-  width: 48px; 
-  height: 48px; 
-  background-color: rgb(191, 208, 215);
-  border-radius: 50%; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 10px; 
-}
-
-.card-hovered {
-  transform: scale(1.1);
-} */
 
 
 .radius-10 {
@@ -114,23 +91,22 @@
 :host {
   padding-bottom: 10px;
   display: block;
-  height: 520px; /* Set the desired height for the scrollable area */
+  height: 675px; 
   overflow: auto;
-  overflow-x: hidden; /* Enable vertical scrolling */
-  /* border: 1px solid #ccc; Optional: Add a border for visual clarity */
+  overflow-x: hidden; 
 }
-/* Styling for the scrollbar */
+
 :host::-webkit-scrollbar {
-  width: 12px; /* Set the width of the scrollbar */
+  width: 12px; 
 }
 
 :host::-webkit-scrollbar-thumb {
-  background-color: #c7e8ea; /* Set the color of the thumb */
-  border-radius: 6px; /* Set the border radius of the thumb */
+  background-color: #c7e8ea; 
+  border-radius: 6px; 
 }
 
 :host::-webkit-scrollbar-track {
-  background-color: #f1f1f1; /* Set the color of the track */
+  background-color: #f1f1f1; 
 }
 .table-desi {
   margin-top: 20px;

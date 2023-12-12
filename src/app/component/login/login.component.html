@@ -1,7 +1,7 @@
 
 
 <div class="login-popup">
- <div style="padding-left: 450px;padding-top: 100px;padding-bottom: 100px;padding-right: 450px;">
+ <div style="padding-left: 560px;padding-top: 150px;padding-bottom: 100px;padding-right: 450px;">
   <div class="login-popup-content shadow-lg mb-5 bg-white rounded" >
     <div class="ps-5 ms-5">
       <img
@@ -17,7 +17,7 @@
      
       <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
         <div class="form-outline">
-          <label class="form-label" for="username">Username</label>
+          <label class="form-label" for="username">Email Id</label>
           <input
             type="text"
             class="form-control"
@@ -25,11 +25,24 @@
             [(ngModel)]="username"
             #usernameInput="ngModel" 
             required 
+            [ngClass]="{
+              'is-invalid':
+              usernameInput.invalid &&
+                (usernameInput.dirty || usernameInput.touched)
+            }"
           />
-         
-          <div *ngIf="usernameInput.invalid && (usernameInput.dirty || usernameInput.touched)">
-            <small class="text-danger">Username is required</small>
+          <div
+          *ngIf="usernameInput.dirty && usernameInput.hasError('required')"
+          >
+            <small class="text-danger">Email Id is required</small>
           </div>
+          <div
+          *ngIf="usernameInput.dirty && usernameInput.hasError('email')"
+        >
+          <small class="text-danger"
+            >Email format incorrect</small
+          >
+        </div>
         </div>
       
         <div class="form-outline">
@@ -39,12 +52,26 @@
             class="form-control"
             name="password"
             [(ngModel)]="password"
-            #passwordInput="ngModel"  
+            #passwordInput="ngModel" 
+            minlength="5"
             required 
+            [ngClass]="{
+              'is-invalid':
+                passwordInput.invalid &&
+                (passwordInput.dirty || passwordInput.touched)
+            }"
           />
-         
-          <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)">
+          <div
+            *ngIf="passwordInput.dirty && passwordInput.hasError('required')"
+          >
             <small class="text-danger">Password is required</small>
+          </div>
+          <div
+            *ngIf="passwordInput.dirty && passwordInput.hasError('minlength')"
+          >
+            <small class="text-danger"
+              >Password must be at least 6 characters</small
+            >
           </div>
         </div>
       

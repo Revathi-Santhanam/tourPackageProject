@@ -106,6 +106,9 @@ export class TourComponent {
     this.tourService.getTourDetails(this.tourId!).subscribe({
       next: (response: any) => {
         this.tour = response.data;
+        if(this.tour.departureDate){
+          this.userData.dateBook=this.tour.departureDate.toString();
+        }
         console.log(this.tour.itineraryList);
         for (var i of this.tour.itineraryList) {
           this.itinerary.day = i.day;

@@ -1,5 +1,5 @@
 <div class="login-popup">
-  <div style="padding-left: 450px; padding-right: 450px">
+  <div style="padding-left: 550px; padding-right: 400px; padding-top: 70px">
     <div class="login-popup-content shadow-lg mb-5 bg-white rounded">
       <div class="ps-5 ms-5">
         <img
@@ -15,40 +15,60 @@
           #registrationForm="ngForm"
           (ngSubmit)="register(registrationForm)"
         >
-          <div class="form-outline">
-            <label class="form-label" for="username">Username</label>
+          <div class="form-outline pb-2">
+            <label class="form-label" for="username">Email Id</label>
             <input
               type="text"
               name="username"
               class="form-control"
               [(ngModel)]="username"
+              #usernameInput="ngModel"
+              email
               required
+              [ngClass]="{
+                'is-invalid':
+                usernameInput.invalid &&
+                  (usernameInput.dirty || usernameInput.touched)
+              }"
             />
             <div
-              *ngIf="
-                registrationForm.controls['username']?.hasError('required')
-              "
+            *ngIf="usernameInput.dirty && usernameInput.hasError('required')"
             >
-              <small class="text-danger">Username is required</small>
+              <small class="text-danger">Email Id is required</small>
             </div>
+            <div
+            *ngIf="usernameInput.dirty && usernameInput.hasError('email')"
+          >
+            <small class="text-danger"
+              >Email format incorrect</small
+            >
           </div>
-          <div class="form-outline">
+          </div>
+          <div class="form-outline pb-2">
             <label class="form-label" for="name">Name</label>
             <input
               type="text"
               name="name"
               class="form-control"
               [(ngModel)]="name"
+              #nameInput="ngModel"
               required
+              [ngClass]="{
+                'is-invalid':
+                nameInput.invalid &&
+                  (nameInput.dirty || nameInput.touched)
+              }"
             />
             <div
-              *ngIf="registrationForm.controls['name']?.hasError('required')"
+              *ngIf="
+                nameInput.invalid && (nameInput.dirty || nameInput.touched)
+              "
             >
-              <small class="text-danger">Username is required</small>
+              <small class="text-danger">Name is required</small>
             </div>
           </div>
 
-          <div class="form-outline">
+          <div class="form-outline pb-2">
             <label class="form-label" for="Phonenumber">Phonenumber</label>
             <input
               type="number"
@@ -56,26 +76,32 @@
               name="Phonenumber"
               class="form-control"
               [(ngModel)]="phoneNumber"
+              #phoneNumberInput="ngModel"
               required
               pattern="[0-9]{10}"
+              [ngClass]="{
+                'is-invalid':
+                phoneNumberInput.invalid &&
+                  (phoneNumberInput.dirty || phoneNumberInput.touched)
+              }"
             />
             <div
               *ngIf="
-                registrationForm.controls['Phonenumber']?.hasError('required')
+                phoneNumberInput.dirty && phoneNumberInput.hasError('required')
               "
             >
               <small class="text-danger">Phonenumber is required</small>
             </div>
             <div
               *ngIf="
-                registrationForm.controls['Phonenumber']?.hasError('pattern')
+                phoneNumberInput.dirty && phoneNumberInput.hasError('pattern')
               "
             >
-              <small class="text-danger">Invalid Phonenumber format</small>
+              <small class="text-danger">Phonenumber must be 10 digits</small>
             </div>
           </div>
 
-          <div class="form-outline">
+          <div class="form-outline pb-2">
             <label class="form-label" for="Password">Password</label>
             <input
               type="password"
@@ -83,20 +109,22 @@
               name="password"
               class="form-control"
               [(ngModel)]="password"
+              #passwordInput="ngModel"
               required
               minlength="6"
+              [ngClass]="{
+                'is-invalid':
+                  passwordInput.invalid &&
+                  (passwordInput.dirty || passwordInput.touched)
+              }"
             />
             <div
-              *ngIf="
-                registrationForm.controls['password']?.hasError('required')
-              "
+              *ngIf="passwordInput.dirty && passwordInput.hasError('required')"
             >
               <small class="text-danger">Password is required</small>
             </div>
             <div
-              *ngIf="
-                registrationForm.controls['password']?.hasError('minlength')
-              "
+              *ngIf="passwordInput.dirty && passwordInput.hasError('minlength')"
             >
               <small class="text-danger"
                 >Password must be at least 6 characters</small
@@ -104,7 +132,7 @@
             </div>
           </div>
 
-          <div class="form-outline">
+          <div class="form-outline pb-2">
             <label class="form-label" for="confirmPassword"
               >Confirm Password</label
             >
@@ -114,30 +142,38 @@
               name="confirmPassword"
               class="form-control"
               [(ngModel)]="confirmPassword"
+              #confirmPasswordInput="ngModel"
               required
               minlength="6"
+              [ngClass]="{
+                'is-invalid':
+                  confirmPasswordInput.dirty &&
+                  (confirmPasswordInput.hasError('required') ||
+                    confirmPasswordInput.hasError('minlength') ||
+                    password !== confirmPassword)
+              }"
             />
             <div
               *ngIf="
-                registrationForm.controls['confirmPassword']?.hasError(
-                  'required'
-                )
+                confirmPasswordInput.dirty &&
+                confirmPasswordInput.hasError('required')
               "
             >
               <small class="text-danger">Confirm Password is required</small>
             </div>
             <div
               *ngIf="
-                registrationForm.controls['confirmPassword']?.hasError(
-                  'minlength'
-                )
+                confirmPasswordInput.dirty &&
+                confirmPasswordInput.hasError('minlength')
               "
             >
               <small class="text-danger"
                 >Confirm Password must be at least 6 characters</small
               >
             </div>
-            <div *ngIf="password !== confirmPassword">
+            <div
+              *ngIf="password !== confirmPassword && confirmPasswordInput.dirty"
+            >
               <small class="text-danger">Passwords do not match</small>
             </div>
           </div>

@@ -33,10 +33,11 @@
       </div>
 
       <!--Block-->
+
       <div
         class="trek-block-one style-two pe-2 ps-2 col-xl-4 col-lg-6 col-md-6 col-sm-12"
         style="display: inline-block"
-        *ngFor="let t of tours"
+        *ngFor="let t of paginatedTours"
       >
         <div class="inner-box">
           <div class="image-box">
@@ -93,5 +94,22 @@
       </div>
     </div>
   </section>
+  <div class="pagination-controls">
+    <button
+      (click)="prevPage()"
+      [disabled]="currentPage === 1"
+      class="pagination-button"
+    >
+      Previous
+    </button>
+    <span class="pagination-page">{{ currentPage }} / {{ totalPages }}</span>
+    <button
+      (click)="nextPage()"
+      [disabled]="currentPage === totalPages"
+      class="pagination-button"
+    >
+      Next
+    </button>
+  </div>
   <footer></footer>
 </div>
