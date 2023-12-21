@@ -250,12 +250,12 @@
             type="submit"
             [disabled]="bookingForm.invalid"
             value="Booking now"
+            [style.cursor]="bookingForm.invalid ? 'not-allowed' : 'pointer'"
           />
         </form>
       </div>
     </div>
   </div>
-  <!-- *ngIf="showLottieAnimation" -->
 
   <footer></footer>
 </div>

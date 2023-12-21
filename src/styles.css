@@ -133,16 +133,13 @@ body {
   background-color: var(--primary-100); 
 }
 
-/* .sideBarItem > a:hover {
-  color: var(--primary-500);
-} */
+
 
 .sideBarActive > .fa-solid {
   color: var(--primary-500);
 }
 
 .sideBarItem:hover {
-  /* color: var(--primary-500); */
   background-color: var(--primary-100);
   padding: 8px;
 }

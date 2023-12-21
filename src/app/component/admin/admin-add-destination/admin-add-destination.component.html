@@ -3,10 +3,7 @@
     <div class="card-header">
       <h5>Add Destination</h5>
     </div>
-    
-     
-   
-   
+
     <div class="card-body">
       <form #destinationForm="ngForm" (ngSubmit)="submitForm(destinationForm)">
         <div class="mb-3">
@@ -18,7 +15,8 @@
             name="categoryId"
             [(ngModel)]="categoryModel.id"
             required
-          /></div>
+          />
+        </div>
         <div class="mb-3">
           <label class="form-label-title">Destination Name</label>
           <input
@@ -31,7 +29,6 @@
           />
         </div>
 
-       
         <div class="form-outline mb-3">
           <label class="form-label" for="username">Choose Image</label>
           <input
@@ -39,18 +36,20 @@
             class="input-file"
             [(ngModel)]="file"
             (change)="onFileChange($event)"
+            name="image"
+            required
           />
         </div>
 
         <button
-          class="btn btn-primary"
+          class="btn1 btn-primary"
           type="submit"
           [disabled]="destinationForm.invalid"
+          [style.cursor]="destinationForm.invalid ? 'not-allowed' : 'pointer'"
         >
-        {{btnRef}}
+          {{ btnRef }}
         </button>
       </form>
-   
     </div>
   </div>
 </div>

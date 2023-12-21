@@ -169,15 +169,6 @@
             <small class="text-danger">Tour Price is required</small>
           </div>
         </div>
-        <!-- <div class="mb-3">
-          <label class="form-label-title">Upload Tour Image</label>
-          <div class="file">
-            <label class="fileInput"
-              >Drop A File
-              <input class="input" accept="*" type="file" />
-            </label>
-          </div>
-        </div> -->
         <div class="form-outline mb-3">
           <label class="form-label" for="username">Choose Image</label>
           <input
@@ -333,22 +324,16 @@
               </div>
             </div>
 
-            <!-- <button
-              type="button"
-              class="btn btn-primary"
-              (click)="addItinerary(tourForm.controls)"
-            >
-              {{ "Add Day " + (i + 1) + " Itinerary" }}
-            </button> -->
+           
           </div>
         </div>
         <div class="pt-3">
           <button
-            class="btn btn-primary"
+            class="btn1 btn-primary"
             type="submit"
-           
+            [disabled]="tourForm.invalid" 
+            [style.cursor]="tourForm.invalid ? 'not-allowed' : 'pointer'"
           >
-          <!--  [disabled]="tourForm.invalid" -->
             Add
           </button>
         </div>

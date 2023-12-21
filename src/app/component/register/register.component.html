@@ -175,6 +175,7 @@
               type="submit"
               class="btn1"
               [disabled]="registrationForm.invalid"
+              [style.cursor]="registrationForm.invalid ? 'not-allowed' : 'pointer'"
             >
               Register
             </button>

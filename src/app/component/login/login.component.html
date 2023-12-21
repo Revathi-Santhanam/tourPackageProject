@@ -1,100 +1,110 @@
-
-
 <div class="login-popup">
- <div style="padding-left: 560px;padding-top: 150px;padding-bottom: 100px;padding-right: 450px;">
-  <div class="login-popup-content shadow-lg mb-5 bg-white rounded" >
-    <div class="ps-5 ms-5">
-      <img
-        src="assets/svg/logo.svg"
-        width="150px"
-        height="100px"
-        alt=""
-        style="color: white"
-      />
-    </div>
+  <div
+    style="
+      padding-left: 560px;
+      padding-top: 150px;
+      padding-bottom: 100px;
+      padding-right: 450px;
+    "
+  >
+    <div class="login-popup-content shadow-lg mb-5 bg-white rounded">
+      <div class="ps-5 ms-5">
+        <img
+          src="assets/svg/logo.svg"
+          width="150px"
+          height="100px"
+          alt=""
+          style="color: white"
+        />
+      </div>
 
-    <div class="ps-5">
-     
-      <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
-        <div class="form-outline">
-          <label class="form-label" for="username">Email Id</label>
-          <input
-            type="text"
-            class="form-control"
-            name="username"
-            [(ngModel)]="username"
-            #usernameInput="ngModel" 
-            required 
-            [ngClass]="{
-              'is-invalid':
-              usernameInput.invalid &&
-                (usernameInput.dirty || usernameInput.touched)
-            }"
-          />
-          <div
-          *ngIf="usernameInput.dirty && usernameInput.hasError('required')"
-          >
-            <small class="text-danger">Email Id is required</small>
+      <div class="ps-5">
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+          <div class="form-outline">
+            <label class="form-label" for="username">Email Id</label>
+            <input
+              type="text"
+              class="form-control"
+              name="username"
+              [(ngModel)]="username"
+              #usernameInput="ngModel"
+              required
+              [ngClass]="{
+                'is-invalid':
+                  usernameInput.invalid &&
+                  (usernameInput.dirty || usernameInput.touched)
+              }"
+            />
+            <div
+              *ngIf="usernameInput.dirty && usernameInput.hasError('required')"
+            >
+              <small class="text-danger">Email Id is required</small>
+            </div>
+            <div *ngIf="usernameInput.dirty && usernameInput.hasError('email')">
+              <small class="text-danger">Email format incorrect</small>
+            </div>
           </div>
-          <div
-          *ngIf="usernameInput.dirty && usernameInput.hasError('email')"
-        >
-          <small class="text-danger"
-            >Email format incorrect</small
-          >
-        </div>
-        </div>
-      
-        <div class="form-outline">
-          <label class="form-label" for="password">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            name="password"
-            [(ngModel)]="password"
-            #passwordInput="ngModel" 
-            minlength="5"
-            maxlength="16"
-            required 
-            [ngClass]="{
-              'is-invalid':
-                passwordInput.invalid &&
-                (passwordInput.dirty || passwordInput.touched)
-            }"
-          />
-          <div
-            *ngIf="passwordInput.dirty && passwordInput.hasError('required')"
-          >
-            <small class="text-danger">Password is required</small>
+
+          <div class="form-outline">
+            <label class="form-label" for="password">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              [(ngModel)]="password"
+              #passwordInput="ngModel"
+              minlength="5"
+              maxlength="16"
+              required
+              [ngClass]="{
+                'is-invalid':
+                  passwordInput.invalid &&
+                  (passwordInput.dirty || passwordInput.touched)
+              }"
+            />
+            <div
+              *ngIf="passwordInput.dirty && passwordInput.hasError('required')"
+            >
+              <small class="text-danger">Password is required</small>
+            </div>
+            <div
+              *ngIf="passwordInput.dirty && passwordInput.hasError('minlength')"
+            >
+              <small class="text-danger">Password length doesn't match</small>
+            </div>
           </div>
-          <div
-            *ngIf="passwordInput.dirty && passwordInput.hasError('minlength')"
-          >
-            <small class="text-danger"
-              >Password length doesn't match</small
+
+          <div>
+            <button
+              type="submit"
+              class="btn1"
+              [disabled]="loginForm.invalid"
+              [style.cursor]="
+              loginForm.invalid ? 'not-allowed' : 'pointer'
+              "
+            >
+              Login
+            </button>
+          </div>
+
+          <div class="d-flex align-items-center">
+            <span>Not registered?</span>
+            <a
+              routerLink="/register"
+              class="text-decoration-none reg"
+              style="color: rgb(57, 92, 121)"
+              >Register here</a
             >
           </div>
-        </div>
-      
-        <div>
-          <button type="submit" class="btn1" [disabled]="loginForm.invalid">Login</button>
-        </div>
-      
-        <div class="d-flex align-items-center">
-          <span >Not registered?</span>
-          <a
-            routerLink="/register"
-            class="text-decoration-none reg"
-            style="color: rgb(57, 92, 121)"
-          >Register here</a>
-        </div>
-      
-        <p class="error" [ngClass]="error.length > 0 ? 'visible' : 'invisible'">
-          {{ error }}
-        </p>
-      </form>
-      
+
+          <p
+            class="error"
+            [ngClass]="error.length > 0 ? 'visible' : 'invisible'"
+          >
+            {{ error }}
+          </p>
+        </form>
+      </div>
     </div>
   </div>
- </div>
 </div>

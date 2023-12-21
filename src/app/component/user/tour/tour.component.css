@@ -91,7 +91,9 @@
 .btn1 {
   background-color: #1dc5ce !important;
   color: white;
-  font-weight: bold;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
 }
 
 .price {
