@@ -112,6 +112,7 @@
               #passwordInput="ngModel"
               required
               minlength="6"
+              maxlength="16"
               [ngClass]="{
                 'is-invalid':
                   passwordInput.invalid &&
@@ -127,7 +128,7 @@
               *ngIf="passwordInput.dirty && passwordInput.hasError('minlength')"
             >
               <small class="text-danger"
-                >Password must be at least 6 characters</small
+                >Password length doesn't match</small
               >
             </div>
           </div>
@@ -161,16 +162,7 @@
             >
               <small class="text-danger">Confirm Password is required</small>
             </div>
-            <div
-              *ngIf="
-                confirmPasswordInput.dirty &&
-                confirmPasswordInput.hasError('minlength')
-              "
-            >
-              <small class="text-danger"
-                >Confirm Password must be at least 6 characters</small
-              >
-            </div>
+          
             <div
               *ngIf="password !== confirmPassword && confirmPasswordInput.dirty"
             >

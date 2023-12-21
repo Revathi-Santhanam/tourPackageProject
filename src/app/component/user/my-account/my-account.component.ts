@@ -116,33 +116,5 @@ export class MyAccountComponent implements OnInit {
       },
     });
   }
-  // downloadInvoice(): void {
-  //   pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
-  //   const docDefinition = {
-  //     content: [
-  //       'Ticket Invoice',
-  //       { text: `Invoice Number: ${this.invoiceNumber}`, bold: true },
-  //       { text: `Date: ${this.currentDate }`, bold: true },
-  //       'Customer Information',
-  //       `Name: ${this.userDetail.name}`,
-  //       `Email: ${this.userDetail.username}`,
-  //       'Tour Information',
-  //       `Tour Name: ${this.tourName}`,
-  //       `Tour Date: ${this.date}`,
-  //       `Price: ${this.price}`,
-  //       `Booking Status: ${this.bookingStatus}`,
-  //       'Terms and Conditions',
-  //       {
-  //         ul: [
-  //           'Order can be returned within a maximum of 10 days.',
-  //           'Warranty of the product will be subject to the manufacturer terms and conditions.',
-  //           'This is a system-generated invoice.'
-  //         ]
-  //       }
-  //     ]
-  //   };
-
-  //   pdfMake.createPdf(docDefinition).download('ticket_invoice.pdf');
-  // }
 }

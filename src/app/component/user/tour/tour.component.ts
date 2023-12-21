@@ -90,7 +90,7 @@ export class TourComponent {
             this.bookingLoadingService.setBooking(false);
             this.router.navigate(['/myaccount']);
           });
-        }, 8000);
+        }, 5000);
       },
       error: (err) => {
         let message: string = err?.error?.error?.message;

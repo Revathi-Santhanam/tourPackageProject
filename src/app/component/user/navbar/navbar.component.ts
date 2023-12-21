@@ -32,6 +32,20 @@ export class NavbarComponent {
       this.isLoggedIn = isLoggedIn;
     });
   }
+  navTour():void{
+    if(this.isLoggedIn){
+      this.router.navigate(['/alltour']);
+    }else{
+      this.router.navigate(['/login']);
+    }
+  }
+  navDes():void{
+    if(this.isLoggedIn){
+      this.router.navigate(['/alldestination']);
+    }else{
+      this.router.navigate(['/login']);
+    }
+  }
   logout(): void {
     this.authService.logout();
   }

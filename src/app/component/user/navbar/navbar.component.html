@@ -1,6 +1,7 @@
 <div class="row">
   <div
     class="navbar navbar-expand-lg bg-primary  shadow"
+    *ngIf="!isLoggedIn"
   >
     <div class="d-flex">
       <div class="nav-item ps-5">
@@ -48,6 +49,7 @@
           <div class="nav-item px-3" routerLinkActive="actived">
             <a
               class="nav-link text-uppercase"
+              (click)="navTour()"
               routerLink="/alltour"
               routerLinkActive="actived"
             >
@@ -57,6 +59,7 @@
           <div class="nav-item px-3" routerLinkActive="actived">
             <a
               class="nav-link text-uppercase"
+              (click)="navDes()"
               routerLink="/alldestination"
               routerLinkActive="actived"
             >

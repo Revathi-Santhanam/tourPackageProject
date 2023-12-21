@@ -46,7 +46,7 @@
                 type="submit"
                 class="form-control btn1"
                 (click)="searchTours()"
-                [disabled]="selectedCategoryId === 0 || tourId === 0"
+                [disabled]="selectedCategoryId === 0 && tourId === 0"
               >
                 Search Tours
               </button>

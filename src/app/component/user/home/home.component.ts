@@ -7,7 +7,6 @@ import { Tour } from 'src/app/model/tour';
 import { AuthService } from 'src/app/service/auth.service';
 import { DestinationService } from 'src/app/service/destination.service';
 import { LoaderService } from 'src/app/service/loader.service';
-import { TourComponent } from '../tour/tour.component';
 import { TourService } from 'src/app/service/tour.service';
 
 @Component({
@@ -16,20 +15,16 @@ import { TourService } from 'src/app/service/tour.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
- 
   constructor(
     @Inject(DOCUMENT) private document: Document,
     public loaderService: LoaderService,
     private authService: AuthService,
     private destinationService: DestinationService,
     private router: Router,
-    private route: ActivatedRoute,
-    private tourService: TourService,
-    private cdr: ChangeDetectorRef
+    private tourService: TourService
   ) {}
 
   scrollToTop(): void {
-    // scroll to the top of the body
     return this.document.body.scrollIntoView({
       behavior: 'smooth',
       block: 'start',
@@ -39,7 +34,7 @@ export class HomeComponent {
 
   isAdmin: boolean = false;
   isLoggedIn: boolean = false;
-  selectedCategoryId: number =0;
+  selectedCategoryId: number = 0;
   error: string = '';
 
   categories: Category[] = [];
@@ -73,17 +68,14 @@ export class HomeComponent {
   }
 
   onCategoryChange() {
-    console.log(this.selectedCategoryId);
-    
+    // console.log(this.selectedCategoryId);
     this.categoryId = this.selectedCategoryId!;
-    
     this.filterTour();
   }
   filterTour() {
     this.filteredTours = this.tours.filter(
       (tour) => tour.categoryId === +this.categoryId
     );
-   
   }
 
   getDestinationsForUser() {
@@ -98,14 +90,20 @@ export class HomeComponent {
     });
   }
   navigateToDesTours(id: number) {
-    this.router.navigate(['/destination', id]);
+    if (this.isLoggedIn) {
+      this.router.navigate(['/destination', id]);
+    } else {
+      this.router.navigate(['/login']);
+    }
   }
   navigateToSearchTour(id: number) {
     this.router.navigate(['/tour', id]);
   }
   searchTours() {
-    if (this.tourId !== null) {
+    if (this.tourId !== null && this.isLoggedIn) {
       this.router.navigate(['/tour', this.tourId]);
+    } else {
+      this.router.navigate(['/login']);
     }
   }
 

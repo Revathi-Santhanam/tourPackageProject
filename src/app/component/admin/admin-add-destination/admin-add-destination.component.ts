@@ -35,7 +35,7 @@ export class AdminAddDestinationComponent {
     private destinationService: DestinationService,
     private router: Router,
     private storage: StorageService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
   ) {
     if (this.storage.getCategory()) {
       this.categoryModel.id = this.storage.getCategory().id;
@@ -51,6 +51,7 @@ export class AdminAddDestinationComponent {
 
     const formData = new FormData();
     formData.append('categoryPhoto', this.file);
+    // console.log('categoryPhoto', this.file);
     formData.append('id', this.categoryModel.id.toString());
     formData.append('categoryName', this.categoryModel.categoryName);
 
@@ -94,5 +95,7 @@ export class AdminAddDestinationComponent {
       console.log('Selected file', this.file);
     }
   }
+
+ 
 
 }
