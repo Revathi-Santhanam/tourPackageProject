@@ -22,10 +22,11 @@ export class AllDestinationComponent {
       next: (response: any) => {
         this.categories = response.data.categories;
         },
-      error: (err) => {
-        let message: string = err?.error?.error?.message;
-        this.error = message.includes(",") ? message.split(",")[0] : message;
-      },
+        complete: () => {},
+        error: (error: Error) => {
+          console.log('Message:', error.message);
+          console.log('Name:', error.name);
+        },
     });
   }
   navigateToDesTours(id:number){

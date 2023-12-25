@@ -37,7 +37,7 @@
           <h5 class="card-title">
            
            {{ tour.tourName }}
-          <p> Price:{{ tour.price }}</p>
+          <p> Price:{{ tour.price | currency:'INR':'symbol':'1.0-0'  }}</p>
             <p>AvailableSeats:{{ tour.totalSeats }}</p>
             <p>Days:{{ tour.days }}</p>
             <p>Date:{{ tour.departureDate }}</p>

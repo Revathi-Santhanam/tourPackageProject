@@ -60,9 +60,10 @@ export class HomeComponent {
         this.tours = response.data;
         this.filteredTours = this.tours;
       },
-      error: (err) => {
-        let message: string = err?.error?.error?.message;
-        this.error = message.includes(',') ? message.split(',')[0] : message;
+      complete: () => {},
+      error: (error: Error) => {
+        console.log('Message:', error.message);
+        console.log('Name:', error.name);
       },
     });
   }
@@ -83,9 +84,10 @@ export class HomeComponent {
       next: (response: any) => {
         this.categories = response.data.categories;
       },
-      error: (err) => {
-        let message: string = err?.error?.error?.message;
-        this.error = message.includes(',') ? message.split(',')[0] : message;
+      complete: () => {},
+      error: (error: Error) => {
+        console.log('Message:', error.message);
+        console.log('Name:', error.name);
       },
     });
   }

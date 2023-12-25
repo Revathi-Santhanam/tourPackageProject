@@ -48,9 +48,10 @@ export class AdminTourComponent {
           this.tourCount=this.tours.length;
         }
       },
-      error: (err) => {
-        let message: string = err?.error?.error?.message;
-        this.error = message.includes(',') ? message.split(',')[0] : message;
+      complete: () => {},
+      error: (error: Error) => {
+        console.log('Message:', error.message);
+        console.log('Name:', error.name);
       },
     });
   }
@@ -62,12 +63,10 @@ export class AdminTourComponent {
         next: (response: any) => {
           this.tours = response.data;
         },
-        error: (err) => {
-          let message: string = err?.error?.error?.message;
-          this.error =
-            message != null && message.includes(',')
-              ? message.split(',')[0]
-              : message;
+        complete: () => {},
+        error: (error: Error) => {
+          console.log('Message:', error.message);
+          console.log('Name:', error.name);
         },
       });
     }

@@ -5,7 +5,7 @@
       style="background-image: url(assets/images/banner-image-1.jpg)"
     ></div>
     <div class="auto-container">
-      <div class="content-box">
+      <div class="content-box pt-5 mt-5">
         <h2>All Tours</h2>
         <div class="bread-crumb">
           <ul>
@@ -35,7 +35,7 @@
       <!--Block-->
 
       <div
-        class="trek-block-one style-two pe-2 ps-2 col-xl-4 col-lg-6 col-md-6 col-sm-12"
+        class="tour-card style-two pe-2 ps-2 col-xl-4 col-lg-6 col-md-6 col-sm-12"
         style="display: inline-block"
         *ngFor="let t of paginatedTours"
       >
@@ -54,7 +54,7 @@
               /></a>
             </div>
             <div class="price">
-              <span>₹{{ t.price }}</span>
+              <span>{{ t.price | currency:'INR':'symbol':'1.0-0'  }}</span>
             </div>
             <div class="info">
               <span class="i-block"

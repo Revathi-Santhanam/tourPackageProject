@@ -5,7 +5,7 @@
       style="background-image: url(assets/images/banner-image-1.jpg)"
     ></div>
     <div class="auto-container">
-      <div class="content-box">
+      <div class="content-box pt-5 mt-5">
         <h2>Tour</h2>
       </div>
     </div>
@@ -16,7 +16,10 @@
     </div>
   </div>
   <div class="d-flex p-0">
-    <div class="ps-5 ms-5 pt-3" style="padding-left: 100px;padding-right: 50px;">
+    <div
+      class="ps-5 ms-5 pt-3"
+      style="padding-left: 100px; padding-right: 50px"
+    >
       <img
         src="{{
           'http://localhost:8080/api/admin/tour/downloadFile/' + tour.id
@@ -48,13 +51,13 @@
               <div><strong>Destination</strong></div>
               <div class="ps-5">{{ tour.destination }}</div>
             </div>
-          </div> 
-          <div>
-            Date:{{tour.departureDate}}
-            AvailableSeats:{{tour.balanceSeats}}
           </div>
           <div>
-            <div class="price">₹&nbsp;{{ tour.price }}</div>
+            Date:{{ tour.departureDate }}<br />
+            AvailableSeats:{{ tour.balanceSeats }}
+          </div>
+          <div>
+            <div class="price">{{ tour.price | currency:'INR':'symbol':'1.0-0' }}</div>
           </div>
         </div>
       </div>
@@ -145,63 +148,89 @@
 
         <form #bookingForm="ngForm" (ngSubmit)="submitForm(bookingForm)">
           <div class="form-field pb-2">
+            <label class="form-label-title">Username</label>
             <input
               name="name"
               placeholder="User Name"
               type="text"
               class="form-control"
               [(ngModel)]="userData.name"
+              #nameInput="ngModel"
               required
+              [ngClass]="{
+                'is-invalid':
+                  nameInput.invalid && (nameInput.dirty || nameInput.touched)
+              }"
             />
             <div
               *ngIf="
-                bookingForm.controls['name']?.invalid &&
-                bookingForm.controls['name']?.touched
+                nameInput.invalid && (nameInput.dirty || nameInput.touched)
               "
             >
-              <small class="text-danger">name is required</small>
+              <small class="text-danger">Name is required</small>
             </div>
           </div>
 
           <div class="form-field pb-2">
+            <label class="form-label-title">Email Id</label>
             <input
               name="email"
               placeholder="Email"
               type="email"
               class="form-control"
               [(ngModel)]="userData.email"
+              #emailInput="ngModel"
+              email
+              required
+              [ngClass]="{
+                'is-invalid':
+                  emailInput.invalid && (emailInput.dirty || emailInput.touched)
+              }"
               required
               email
             />
-            <div
-              *ngIf="
-                bookingForm.controls['email']?.invalid &&
-                bookingForm.controls['email']?.touched
-              "
-            >
-              <small class="text-danger">email is required</small>
+            <div *ngIf="emailInput.dirty && emailInput.hasError('required')">
+              <small class="text-danger">Email Id is required</small>
+            </div>
+            <div *ngIf="emailInput.dirty && emailInput.hasError('email')">
+              <small class="text-danger">Email format incorrect</small>
             </div>
           </div>
           <div class="form-field pb-2">
+            <label class="form-label-title">Phonenumber</label>
             <input
               name="phone"
               placeholder="phonenumber"
               type="number"
               class="form-control"
               [(ngModel)]="userData.phone"
+              #phoneNumberInput="ngModel"
+              pattern="[0-9]{10}"
               required
+              [ngClass]="{
+                'is-invalid':
+                  phoneNumberInput.invalid &&
+                  (phoneNumberInput.dirty || phoneNumberInput.touched)
+              }"
             />
             <div
               *ngIf="
-                bookingForm.controls['phone']?.invalid &&
-                bookingForm.controls['phone']?.touched
+                phoneNumberInput.dirty && phoneNumberInput.hasError('required')
               "
             >
-              <small class="text-danger">phonenumber is required</small>
+              <small class="text-danger">Phonenumber is required</small>
+            </div>
+            <div
+              *ngIf="
+                phoneNumberInput.dirty && phoneNumberInput.hasError('pattern')
+              "
+            >
+              <small class="text-danger">Phonenumber must be 10 digits</small>
             </div>
           </div>
 
           <div class="form-field pb-2">
+            <label class="form-label-title">Tour Date</label>
             <input
               name="dateBook"
               placeholder="Date"
@@ -209,6 +238,8 @@
               class="form-control"
               [(ngModel)]="userData.dateBook"
               required
+              [min]="userData.dateBook"
+              [max]="userData.dateBook"
             />
             <div
               *ngIf="
@@ -223,6 +254,7 @@
           <div class="form-group pb-2">
             <div class="item-field-tour-booking">
               <div class="input-number-ticket">
+                <label class="form-label-title">Ticket count</label>
                 <input
                   type="number"
                   name="number_ticket"
@@ -246,7 +278,7 @@
           </div>
 
           <input
-            class="btn1"
+            class="btn2"
             type="submit"
             [disabled]="bookingForm.invalid"
             value="Booking now"

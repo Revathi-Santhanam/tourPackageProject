@@ -1,13 +1,13 @@
-<div class="container d-flex ps-5 ms-5">
-  <div class="db-l pt-3">
-    <div class="db-l-1">
+<div class="container d-flex ps-5 ms-5 pt-5 mt-5">
+  <div class="profile pt-3">
+    <div class="profile-1">
       <ul>
         <li><ng-lottie [options]="options"></ng-lottie></li>
         <li>Hey,</li>
         <li>{{ userDetail.name }}</li>
       </ul>
     </div>
-    <div class="db-l-2">
+    <div class="profile-2">
       <ul>
         <li>
           <a><img src="assets/images/dbl1.png" alt="" /> All Bookings</a>
@@ -64,9 +64,9 @@
             <tr *ngFor="let b of bookings">
               <td>{{ b.tour }}</td>
               <td>{{ b.username }}</td>
-              <td>{{ b.price }}</td>
+              <td>{{ b.price | currency:'INR':'symbol':'1.0-0' }}</td>
               <td>{{ b.bookingStatus }}</td>
-              <td>{{ b.createdAt }}</td>
+              <td>{{ b.createdAt | date:'MM-dd-yyyy'}}</td>
               <td><button class="btn1" (click)="togglePopup(b)">Download</button></td>
             </tr>
           </tbody>
@@ -79,9 +79,6 @@
 <div *ngIf="isPopupVisible" class="popup-container">
   <div class="popup invoice-container">
     <h4>Ticket Invoice</h4>
-    <!-- <div style="width: 200px; padding-left: 100px">
-      <ng-lottie [options]="optionsInvoice"></ng-lottie>
-    </div> -->
     <hr />
     <div class="invoice-details">
       <div>
@@ -104,7 +101,7 @@
       <h4>Tour Information</h4>
       <div><strong>Tour Name:</strong>{{tourName}}</div>
       <div><strong>Tour Date:</strong>{{date}}</div>
-      <div><strong>Price:</strong>{{price}}</div>
+      <div><strong>Price:</strong>{{price | currency:'INR':'symbol':'1.0-0' }}</div>
       <div><strong>Booking Status:</strong>{{bookingStatus}}</div>
     </div>
     <div class="d-flex justify-content-evenly">

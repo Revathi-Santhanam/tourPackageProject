@@ -38,15 +38,18 @@ export class BookingsComponent {
     this.bookingService.getBookingDetails().subscribe({
       next: (response: any) => {
         let bookings: Booking[] = response.data;
+        console.log(response.data);
+        
         if (bookings.length > 0) {
           this.bookings = bookings;
           this.totalBookings=this.bookings.length;
           // this.bookingDetail = bookings[0];
         }
       },
-      error: (err) => {
-        let message: string = err?.error?.error?.message;
-        this.error = message.includes(',') ? message.split(',')[0] : message;
+      complete: () => {},
+      error: (error: Error) => {
+        console.log('Message:', error.message);
+        console.log('Name:', error.name);
       },
     });
   }

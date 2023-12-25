@@ -24,9 +24,9 @@
             <td>{{ b.name }}</td>
             <td>{{ b.username }}</td>
             <td>{{ b.phoneNumber }}</td>
-            <td>{{ b.price }}</td>
+            <td>{{ b.price | currency:'INR':'symbol':'1.0-0'  }}</td>
             <td>{{ b.bookingStatus }}</td>
-            <td>{{ b.createdAt }}</td>
+            <td>{{ b.createdAt | date:'MM-dd-yyyy'}}</td>
           </tr>
           <!-- Add more table rows as needed -->
         </tbody>

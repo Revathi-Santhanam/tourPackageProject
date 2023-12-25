@@ -15,15 +15,6 @@
   background-size: cover;
 }
 
-@keyframes slide {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 3000px 0;
-  }
-}
-
 .inner-banner .content-box {
   position: relative;
   text-align: center;
@@ -88,9 +79,9 @@
   margin-bottom: 30px;
   background-color: #f3f7fa;
 }
-.btn1 {
-  background-color: #1dc5ce !important;
-  color: white;
+.btn2 {
+  background-color: white !important;
+  color: #1dc5ce;
   padding: 10px 15px;
   border: none;
   border-radius: 5px;

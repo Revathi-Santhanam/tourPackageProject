@@ -63,9 +63,10 @@ export class AdminHomeComponent {
           this.totalUsers=userDetails.length;
         }
       },
-      error: (err) => {
-        let message: string = err?.error?.error?.message;
-        this.error = message.includes(',') ? message.split(',')[0] : message;
+      complete: () => {},
+      error: (error: Error) => {
+        console.log('Message:', error.message);
+        console.log('Name:', error.name);
       },
     });
   }
@@ -87,9 +88,10 @@ export class AdminHomeComponent {
           
         }
       },
-      error: (err) => {
-        let message: string = err?.error?.error?.message;
-        this.error = message.includes(',') ? message.split(',')[0] : message;
+      complete: () => {},
+      error: (error: Error) => {
+        console.log('Message:', error.message);
+        console.log('Name:', error.name);
       },
     });
   }
@@ -102,9 +104,10 @@ export class AdminHomeComponent {
           this.tourCount=this.tours.length;
         }
       },
-      error: (err) => {
-        let message: string = err?.error?.error?.message;
-        this.error = message.includes(',') ? message.split(',')[0] : message;
+      complete: () => {},
+      error: (error: Error) => {
+        console.log('Message:', error.message);
+        console.log('Name:', error.name);
       },
     });
   }

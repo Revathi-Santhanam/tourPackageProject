@@ -31,7 +31,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'admin', component: AdminHomeComponent, canActivate: [authGuard] },
   { path: 'admin/destination', component: AdminDestinationComponent,canActivate: [authGuard] },
-  { path: 'addDestination', component: AdminAddDestinationComponent,canActivate: [authGuard] },
+  { path: 'addDestination', component: AdminAddDestinationComponent, },
   { path: 'admin/tour', component: AdminTourComponent,canActivate: [authGuard]  },
   { path: 'addtour', component: AdminAddTourComponent ,canActivate: [authGuard] },
   { path: 'admin/booking', component: BookingsComponent,canActivate: [authGuard]  },

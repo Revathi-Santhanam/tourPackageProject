@@ -6,9 +6,9 @@ export interface Tour {
   tourName:string;
   tourPhoto?:any;
   price:number;
-  destination:string;
+  destination?:string;
   totalSeats:number;
-  balanceSeats?:number;
+  balanceSeats:number;
   days:number;
   departureDate?:Date;
   tourDescription:string;

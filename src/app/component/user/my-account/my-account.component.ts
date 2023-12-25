@@ -97,7 +97,7 @@ export class MyAccountComponent implements OnInit {
       <h3>Tour Information</h3>
       <p><strong>Tour Name:</strong> ${this.tourName}</p>
       <p><strong>Tour Date:</strong> ${this.date}</p>
-      <p><strong>Price:</strong> ${this.price}</p>
+      <p><strong>Price:</strong> ${this.price }</p>
       <p><strong>Booking Status:</strong> ${this.bookingStatus}</p>
     `;
   }
@@ -110,9 +110,10 @@ export class MyAccountComponent implements OnInit {
         this.bookings = response.data;
         console.log(this.bookings);
       },
-      error: (err) => {
-        let message: string = err?.error?.error?.message;
-        this.error = message.includes(',') ? message.split(',')[0] : message;
+      complete: () => {},
+      error: (error: Error) => {
+        console.log('Message:', error.message);
+        console.log('Name:', error.name);
       },
     });
   }

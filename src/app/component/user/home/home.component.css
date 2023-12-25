@@ -13,17 +13,6 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.btn1 {
-  background-color: #1dc5ce !important;
-  color: white;
-  font-weight: bold;
-}
-.btn {
-  border-color: #1dc5ce !important;
-  background-color: #bcedf0 !important;
-  color: black;
-  border-radius: 50%;
-}
 
 .to-top {
   bottom: 0;
@@ -152,75 +141,29 @@
 .why-block .text {
   position: relative;
 }
-
-@-webkit-keyframes ripple {
-  70% {
-    box-shadow: 0 0 0 70px rgba(253, 167, 0, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(253, 167, 0, 0);
-  }
-}
-
-@keyframes ripple {
-  70% {
-    box-shadow: 0 0 0 70px rgba(253, 167, 0, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(253, 167, 0, 0);
-  }
-}
-
-.theme-btn {
-  display: inline-block;
-  -moz-transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-}
-
-@-webkit-keyframes ripple {
-  70% {
-    box-shadow: 0 0 0 70px rgba(253, 167, 0, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(253, 167, 0, 0);
-  }
-}
-
-@keyframes ripple {
-  70% {
-    box-shadow: 0 0 0 70px rgba(253, 167, 0, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(253, 167, 0, 0);
-  }
-}
 .trending-destinations {
   position: relative;
-
   background: #f9fcff;
 }
-
-.dest-block-one {
+/* Destination section */
+.dest-block {
   position: relative;
 }
 
-.dest-block-one .inner-box {
+.dest-block .inner-box {
   position: relative;
   display: block;
   border-radius: 8px;
   overflow: hidden;
 }
 
-.dest-block-one .image-box {
+.dest-block .image-box {
   position: relative;
-
   border-radius: 8px;
   overflow: hidden;
 }
 
-.dest-block-one .image-box img {
+.dest-block .image-box img {
   position: relative;
 
   width: 100%;
@@ -232,11 +175,11 @@
   -o-transition: all 500ms ease;
 }
 
-.dest-block-one .inner-box:hover img {
+.dest-block .inner-box:hover img {
   transform: scale(1.05, 1.05);
 }
 
-.dest-block-one .hvr-box {
+.dest-block .hvr-box {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -263,7 +206,7 @@
   background-position: center center;
 }
 
-.dest-block-one:hover .hvr-box {
+.dest-block:hover .hvr-box {
   -webkit-transform: scale(1, 1);
   -ms-transform: scale(1, 1);
   transform: scale(1, 1);
@@ -272,14 +215,14 @@
   transform-origin: left center;
 }
 
-.dest-block-one .hvr-box .cap-box {
+.dest-block .hvr-box .cap-box {
   position: absolute;
   left: 30px;
   bottom: 30px;
   right: 30px;
 }
 
-.dest-block-one .hvr-box .cap-inner {
+.dest-block .hvr-box .cap-inner {
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -288,7 +231,7 @@
   border-radius: 6px;
 }
 
-.dest-block-one .hvr-box h4 {
+.dest-block .hvr-box h4 {
   position: relative;
   float: left;
   font-weight: 700;
@@ -298,15 +241,15 @@
   padding: 5px 0px;
 }
 
-.dest-block-one .hvr-box h4 a {
+.dest-block .hvr-box h4 a {
   color: #10221b;
 }
 
-.dest-block-one .hvr-box h4 a:hover {
+.dest-block .hvr-box h4 a:hover {
   text-decoration: underline;
 }
 
-.dest-block-one .hvr-box .tour-count {
+.dest-block .hvr-box .tour-count {
   position: relative;
   float: left;
   display: inline-block;
@@ -320,19 +263,20 @@
   border-radius: 23px;
 }
 
-.dest-block-one .alt-hvr {
+.dest-block .alt-hvr {
   text-align: center;
 }
 
-.dest-block-one .alt-hvr h4 {
+.dest-block .alt-hvr h4 {
   float: none;
 }
 
-.dest-block-one .alt-hvr .tour-count {
+.dest-block .alt-hvr .tour-count {
   float: none;
   margin-left: 0;
   margin-top: 10px;
 }
+/* Subscribe section styling */
 .subscribe-section {
   position: relative;
   padding: 70px 0px 120px;
@@ -419,7 +363,7 @@
 }
 
 .subscribe-section form .form-group input {
-  height: 88px;
+  height: 80px;
   line-height: 30px;
   padding: 27px 200px 27px 70px;
   font-weight: 400;
@@ -443,19 +387,4 @@
   margin: 0 0;
   z-index: 1;
   pointer-events: none;
-}
-
-.subscribe-section form .theme-btn {
-  position: absolute;
-  right: 20px;
-  top: 17px;
-  width: 174px;
-  line-height: 30px;
-  padding: 12px 20px;
-  border: none;
-  background: #1dc5ce;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
 }

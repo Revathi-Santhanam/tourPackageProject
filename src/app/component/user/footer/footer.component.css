@@ -1,47 +1,36 @@
-.footer-bottom{
+.footer-bottom {
   background-color: black;
   color: white;
 }
 
-.footer{
+.footer {
   height: 350px;
-  background-color:#F9FCFF;
+  background-color: #f9fcff;
 }
-.links ul li a{
+.links ul li a {
   text-decoration: none;
   color: black;
 }
 
-
-
-
-
-.social-links div div a{
+.social-links div div a {
   position: relative;
   display: block;
   width: 28px;
   height: 28px;
   line-height: 28px;
   font-size: 14px;
-  color: #1DC5CE;
-  border: 1px solid #1DC5CE;
+  color: #1dc5ce;
+  border: 1px solid #1dc5ce;
   text-align: center;
   border-radius: 50%;
-  -moz-transition:all 0.3s ease;
-  -webkit-transition:all 0.3s ease;
-  -ms-transition:all 0.3s ease;
-  -o-transition:all 0.3s ease;
-  transition:all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.social-links div div a:hover{
-  background: #1DC5CE;
+.social-links div div a:hover {
+  background: #1dc5ce;
   color: #ffffff;
 }
-
-
-
-
-
-
-

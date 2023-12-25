@@ -11,8 +11,6 @@ import { StorageService } from 'src/app/service/storage.service';
   selector: 'add-destination',
   templateUrl: './admin-add-destination.component.html',
   styleUrls: ['./admin-add-destination.component.css'],
- 
-  
 })
 export class AdminAddDestinationComponent {
   error: string = '';
@@ -33,9 +31,9 @@ export class AdminAddDestinationComponent {
 
   constructor(
     private destinationService: DestinationService,
-    private router: Router,
     private storage: StorageService,
     private toastr: ToastrService,
+    private router:Router
   ) {
     if (this.storage.getCategory()) {
       this.categoryModel.id = this.storage.getCategory().id;
@@ -59,7 +57,7 @@ export class AdminAddDestinationComponent {
       this.destinationService.postCategory(formData).subscribe({
         next: (response: ApiResponse) => {
           this.categoryModel = response.data;
-          this.toastr.success('Destination added successfully!', 'Success');
+          this.toastr.success('Destination added successfully!',);
           this.router.navigate(['/admin/destination']);
         },
         complete: () => {},
@@ -72,17 +70,15 @@ export class AdminAddDestinationComponent {
       this.destinationService.putCategory(formData).subscribe({
         next: (response: ApiResponse) => {
           this.categoryModel = response.data;
-          console.log(this.categoryModel);
-          this.toastr.success('Destination editted successfully!', 'Success');
+          // console.log(this.categoryModel);
+          this.toastr.success('Destination editted successfully!',);
           this.storage.removeCategory();
           this.router.navigate(['/admin/destination']);
         },
-        error: (err) => {
-          let message: string = err?.error?.error?.message;
-          this.error =
-            message != null && message.includes(',')
-              ? message.split(',')[0]
-              : message;
+        complete: () => {},
+        error: (error: Error) => {
+          console.log('Message:', error.message);
+          console.log('Name:', error.name);
         },
       });
     }
@@ -95,7 +91,4 @@ export class AdminAddDestinationComponent {
       console.log('Selected file', this.file);
     }
   }
-
- 
-
 }

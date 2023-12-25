@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
 import { LoaderService } from 'src/app/service/loader.service';
+import { StorageService } from 'src/app/service/storage.service';
 
 @Component({
   selector: 'navbar',
@@ -12,8 +13,11 @@ export class NavbarComponent {
   constructor(
     private authService: AuthService,
     public loaderService: LoaderService,
-    private router:Router
+    private router:Router,
+    private stortage: StorageService,
   ) {} 
+
+  user:String=this.stortage.getLoggedInUser().name!;
   
   isActive(route: string): boolean {
     return this.router.url === route;

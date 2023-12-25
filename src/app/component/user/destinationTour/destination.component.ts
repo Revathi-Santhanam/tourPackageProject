@@ -26,11 +26,14 @@ export class DestinationComponent implements OnInit {
   getDestinationTour() {
     this.destinationService.getDestinationTour(this.categoryId!).subscribe({
       next: (response: any) => {
-        this.tours = response.data;
+        // this.tours = response.data
+        const today = new Date();
+        this.tours = response.data.filter((tour: Tour) => new Date(tour.departureDate!) > today);
       },
-      error: (err) => {
-        let message: string = err?.error?.error?.message;
-        this.error = message.includes(',') ? message.split(',')[0] : message;
+      complete: () => {},
+      error: (error: Error) => {
+        console.log('Message:', error.message);
+        console.log('Name:', error.name);
       },
     });
   }

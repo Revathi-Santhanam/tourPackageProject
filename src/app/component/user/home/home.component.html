@@ -1,10 +1,15 @@
 <div class="row">
   <navbar *ngIf="!isLoggedIn"></navbar>
+  <!-- Main banner with search -->
   <div class="main">
     <div>
       <h2
-        style="font-size: 40px; color: #ffffff; text-align: center"
-        class="pt-5 mt-5"
+        style="
+          font-size: 40px;
+          color: #ffffff;
+          text-align: center;
+          padding-top: 200px;
+        "
       >
         <b>The Easiest Way to Get tours you interested</b>
       </h2>
@@ -12,14 +17,16 @@
         style="font-size: 20px; color: #ffffff; text-align: center"
         class="pt-4"
       >
-        Find tours, book tour online and  with more options.
+        Find tours, book tour online and with more options.
       </p>
     </div>
-    <div class="d-flex pb-5" style="padding-left: 250px;">
+    <div class="d-flex pb-5" style="padding-left: 250px">
       <div class="container justify-content-center pb-5">
         <form name="hb-search-form" id="tourBookingFormSearch">
           <div class="d-flex pb-5" style="padding-top: 100px">
             <div class="d-flex ps-5 ms-5">
+            
+
               <select
                 class="form-control"
                 [(ngModel)]="selectedCategoryId!"
@@ -33,7 +40,11 @@
               </select>
             </div>
             <div class="d-flex ps-3">
-              <select class="form-control text-black" [(ngModel)]="tourId" name="tour">
+              <select
+                class="form-control text-black"
+                [(ngModel)]="tourId"
+                name="tour"
+              >
                 <option value="0">Tour Name</option>
                 <option *ngFor="let tour of filteredTours" [value]="tour.id">
                   {{ tour.tourName }}
@@ -54,10 +65,9 @@
           </div>
         </form>
       </div>
-  
     </div>
   </div>
-  <!--  -->
+  <!-- destination section  -->
   <section class="trending-destinations">
     <div class="auto-container">
       <div class="title-box centered">
@@ -65,27 +75,35 @@
         <h2><i class="bg-vector"></i><span>Trending Destinations</span></h2>
       </div>
 
-      <div class="gallery-box" style="padding-left: 50px;padding-right: 50px;">
+      <div class="gallery-box" style="padding-left: 50px; padding-right: 50px">
         <div class="masonry-container row clearfix" style="position: relative">
           <!--Block-->
           <div
-            class="dest-block-one masonry-item col-lg-6 pb-3 col-md-12 col-sm-12"
+            class="dest-block col-lg-6 pb-3 col-md-12 col-sm-12"
             *ngFor="let c of categories"
           >
             <div class="inner-box" (click)="navigateToDesTours(c.id!)">
               <div class="image-box">
                 <a (click)="navigateToDesTours(c.id!)"
-                  ><img src="{{'http://localhost:8080/api/admin/category/downloadFile/'+ c.id  }}" width="200px"
-                  height="300px" alt=""
+                  ><img
+                    src="{{
+                      'http://localhost:8080/api/admin/category/downloadFile/' +
+                        c.id
+                    }}"
+                    width="200px"
+                    height="300px"
+                    alt=""
                 /></a>
               </div>
               <div class="hvr-box">
                 <div class="cap-box">
                   <div class="cap-inner clearfix">
                     <h4>
-                      <a class="text-decoration-none ps-2 pe-2" (click)="navigateToDesTours(c.id!)">{{
-                        c.categoryName
-                      }}</a>
+                      <a
+                        class="text-decoration-none ps-2 pe-2"
+                        (click)="navigateToDesTours(c.id!)"
+                        >{{ c.categoryName }}</a
+                      >
                     </h4>
                   </div>
                 </div>
@@ -96,7 +114,7 @@
       </div>
     </div>
   </section>
-  <!--  -->
+  <!-- why to choose us section -->
   <section class="why-section">
     <div class="floated-icon left">
       <img src="assets/svg/stones-left.svg" alt="" title="" />
@@ -237,7 +255,7 @@
                         placeholder="Email Address"
                       />
                     </div>
-                    <button type="submit" class="theme-btn btn-style-one">
+                    <button type="submit" class="btn1">
                       <span
                         >SUBSCRIBE <i class="icon fa fa-paper-plane"></i
                       ></span>

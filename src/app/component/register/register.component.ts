@@ -2,8 +2,12 @@ import { Component } from '@angular/core';
 import { Form } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AnimationOptions } from 'ngx-lottie';
+import { ApiResponse } from 'src/app/model/apiResponse';
 import { Register } from 'src/app/model/register';
 import { AuthService } from 'src/app/service/auth.service';
+import { EmailService } from 'src/app/service/email.service';
+import { StorageService } from 'src/app/service/storage.service';
+import { ToasterService } from 'src/app/service/toaster.service';
 
 @Component({
   selector: 'app-register',
@@ -18,30 +22,34 @@ export class RegisterComponent {
   password: string = '';
   confirmPassword: string = '';
   phoneNumber: string = '';
-  name:string='';
-  error: string='';
+  name: string = '';
+  error: string = '';
 
-  constructor(private auth:AuthService,private router:Router){}
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    private toastr: ToasterService
+  ) {}
   register(registrationForm: any): void {
     console.log(registrationForm.value);
-    let register:Register={
+    let register: Register = {
       username: this.username,
       password: this.password,
       name: this.name,
-      phoneNumber: parseInt(this.phoneNumber)
-    }
-    this.auth.register(register)
-    .subscribe({
+      phoneNumber: parseInt(this.phoneNumber),
+    };
+    this.auth.register(register).subscribe({
       next: (response: any) => {
         this.register = response.data;
+        this.toastr.success('Registered successfully!');
         this.router.navigate(['/login']);
       },
-      error: (err) => {
-        let message: string = err?.error?.error?.message;
-        this.error = message.includes(",")
-          ? message.split(",")[0]
-          : message;
+      complete: () => {},
+      error: (error: Error) => {
+        console.log('Message:', error.message);
+        console.log('Name:', error.name);
       },
     });
   }
+
 }

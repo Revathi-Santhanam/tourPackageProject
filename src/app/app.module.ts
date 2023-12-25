@@ -7,6 +7,7 @@ import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DatePipe } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 
 import player from 'lottie-web';
@@ -68,12 +69,12 @@ export function playerFactory() {
     LottieModule.forRoot({ player: playerFactory }),
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      positionClass: 'toast-top-right', 
-      preventDuplicates: true, 
-      closeButton: true, 
-      progressBar: true, 
-      timeOut: 7000, 
+      positionClass: 'toast-top-right',
+      closeButton: true,
+      progressBar: true,
+      timeOut: 7000,
     }),
+   
   ],
   providers: [
     {
@@ -86,7 +87,9 @@ export function playerFactory() {
       useClass: AuthInterceptorService,
       multi: true,
     },
+    DatePipe,
   ],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}

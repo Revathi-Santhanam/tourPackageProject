@@ -6,11 +6,11 @@
     <div class="card-body">
       <form #tourForm="ngForm" (ngSubmit)="submitForm(tourForm)">
         <div class="mb-3">
-          <label class="form-label-title">Tour Id</label>
+          <!-- <label class="form-label-title">Tour Id</label> -->
           <input
             class="form-control"
             placeholder="Tour Id"
-            type="text"
+            type="hidden"
             name="tourId"
             [(ngModel)]="tourFormModel.id"
             required
@@ -36,15 +36,37 @@
           </div>
         </div>
         <div class="mb-3">
-          <label class="form-label-title">CategoryId</label>
-          <input
+          <label class="form-label-title">Destination</label>
+          <!-- <input
+            type="text"
+            placeholder="Search"
+            (input)="onSearchChange($event)"
+          /> -->
+
+          <!-- <select
+            [(ngModel)]="selectedCategoryId"
+            name="destination"
+            (change)="onCategoryChange()"
+          >
+            <option value="0" disabled>Select Destination</option>
+            <option
+              *ngFor="let destination of filteredDestinations"
+              [value]="destination.id"
+            >
+              {{ destination.categoryName }}
+            </option>
+          </select> -->
+          <select
             class="form-control"
-            placeholder="CategoryId"
-            type="number"
-            name="categoryId"
-            [(ngModel)]="tourFormModel.categoryId"
-            required
-          />
+            [(ngModel)]="selectedCategoryId!"
+            name="destination"
+            (change)="onCategoryChange()"
+          >
+            <option value="0" disabled>Select Destination</option>
+            <option *ngFor="let c of destinations" [value]="c.id">
+              {{ c.categoryName }}
+            </option>
+          </select>
           <div
             *ngIf="
               tourForm.controls['categoryId']?.invalid &&
@@ -54,25 +76,7 @@
             <small class="text-danger">categoryId is required</small>
           </div>
         </div>
-        <div class="mb-3">
-          <label class="form-label-title">Destination Name</label>
-          <input
-            class="form-control"
-            placeholder="Destination Name"
-            type="text"
-            name="destinationName"
-            [(ngModel)]="tourFormModel.destination"
-            required
-          />
-          <div
-            *ngIf="
-              tourForm.controls['destinationName']?.invalid &&
-              tourForm.controls['destinationName']?.touched
-            "
-          >
-            <small class="text-danger">Destination Name is required</small>
-          </div>
-        </div>
+
         <div class="mb-3">
           <label class="form-label-title">Tour Description</label>
           <input
@@ -100,6 +104,7 @@
             type="date"
             name="departureDate"
             [(ngModel)]="tourFormModel.departureDate"
+            [min]="minDate"
             required
           />
           <div
@@ -120,6 +125,7 @@
             name="tourDays"
             [(ngModel)]="tourFormModel.days"
             required
+            autocomplete="off"
             (change)="getItineraries()"
           />
           <div
@@ -323,15 +329,13 @@
                 <small class="text-danger">Dinner are required</small>
               </div>
             </div>
-
-           
           </div>
         </div>
         <div class="pt-3">
           <button
             class="btn1 btn-primary"
             type="submit"
-            [disabled]="tourForm.invalid" 
+            [disabled]="tourForm.invalid"
             [style.cursor]="tourForm.invalid ? 'not-allowed' : 'pointer'"
           >
             Add

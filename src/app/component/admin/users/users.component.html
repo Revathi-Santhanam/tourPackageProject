@@ -12,12 +12,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let user of userDetails">
-          <td>{{ user.id }}</td>
-          <td>{{ user.name }}</td>
-          <td>{{ user.username }}</td>
-          <td>{{ user.phoneNumber }}</td>
-          <td>{{ user.createdAt }}</td>
+        <tr *ngFor="let user of userDetails" >
+          <td *ngIf="user.name !== 'admin'">{{ user.id }}</td>
+          <td *ngIf="user.name !== 'admin'">{{ user.name }}</td>
+          <td *ngIf="user.name !== 'admin'">{{ user.username }}</td>
+          <td *ngIf="user.name !== 'admin'">{{ user.phoneNumber }}</td>
+          <td *ngIf="user.name !== 'admin'">{{ user.createdAt | date:'MM-dd-yyyy' }}</td>
         </tr>
        
       </tbody>

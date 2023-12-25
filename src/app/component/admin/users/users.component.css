@@ -1,7 +1,7 @@
 :host {
   padding-bottom: 10px;
   display: block;
-  height: 675px;
+  height: 630px;
   overflow: auto;
   overflow-x: hidden; }
 
@@ -16,27 +16,4 @@
 
 :host::-webkit-scrollbar-track {
   background-color: #f1f1f1; 
-}
-.table-desi {
-  margin-top: 20px;
-  border-radius: 5px;
-}
-
-.Booking-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  
-}
-
-.Booking-table th,
-.Booking-table td {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #dee2e6;
-}
-
-.Booking-table th {
-  background-color:var(--primary-300) !important;
-  color: black;
 }

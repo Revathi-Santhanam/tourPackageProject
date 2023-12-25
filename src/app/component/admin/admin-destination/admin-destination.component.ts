@@ -13,11 +13,6 @@ export class AdminDestinationComponent implements OnInit {
   error: string = '';
 
   destinations: Category[] = [];
-  destination:Category={
-    categoryName: '',
-    categoryPhoto: '',
-    id: 0
-  }
   editId:number=0;
   desCount:number=0;
   constructor(
@@ -40,9 +35,10 @@ export class AdminDestinationComponent implements OnInit {
         this.destinations = response.data;
         this.desCount=this.destinations.length;
       },
-      error: (err) => {
-        let message: string = err?.error?.error?.message;
-        this.error = message.includes(',') ? message.split(',')[0] : message;
+      complete: () => {},
+      error: (error: Error) => {
+        console.log('Message:', error.message);
+        console.log('Name:', error.name);
       },
     });
   }
@@ -53,13 +49,11 @@ export class AdminDestinationComponent implements OnInit {
         next: (response: any) => {
           this.destinations = response.data;
         },
-        error: (err) => {
-          let message: string = err?.error?.error?.message;
-          this.error =
-            message != null && message.includes(',')
-              ? message.split(',')[0]
-              : message;
-        },
+        complete: () => {},
+      error: (error: Error) => {
+        console.log('Message:', error.message);
+        console.log('Name:', error.name);
+      },
       });
     
   }

@@ -1,72 +1,5 @@
-.inner-banner {
-  position: relative;
-  padding-top: 75px;
-  padding-bottom: 75px;
-}
-
-.inner-banner .image-layer {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: cover;
-}
-
-.inner-banner .content-box {
-  position: relative;
-  text-align: center;
-}
-
-.inner-banner .content-box h2 {
-  position: relative;
-  color: #ffffff;
-  text-transform: uppercase;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.inner-banner .bread-crumb {
-  position: relative;
-  line-height: 24px;
-  padding-left: 44px;
-}
-
-.inner-banner .bread-crumb .icon-home {
-  position: absolute;
-  left: -44px;
-  top: 0px;
-  width: 34px;
-  height: 34px;
-  font-size: 14px;
-  line-height: 34px;
-  text-align: center;
-  background: #1dc5ce;
-  color: #ffffff;
-  border-radius: 50%;
-}
-
-.inner-banner .bread-crumb ul li {
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-  line-height: 24px;
-
-  text-transform: capitalize;
-
-  color: #ffffff;
-}
-
-.inner-banner .bread-crumb ul li:last-child {
-  margin-right: 0;
-}
-
-
 .dest-section {
   position: relative;
-  /* padding: 120px 0px 120px; */
 }
 
 .dest-section .floated-icon {
@@ -93,16 +26,12 @@
   text-align: center;
   margin-top: 10px;
 }
-.trend-block-one {
+.dest-block {
   position: relative;
   margin-bottom: 50px;
 }
 
-.owl-theme .trend-block-one {
-  margin-bottom: 0;
-}
-
-.trend-block-one .inner-box {
+.dest-block .inner-box {
   position: relative;
   display: block;
   background: #101010;
@@ -111,18 +40,18 @@
   overflow: hidden;
 }
 
-.trend-block-one .image-box {
+.dest-block .image-box {
   position: relative;
 }
 
-.trend-block-one .image-box .image {
+.dest-block .image-box .image {
   position: relative;
   background: #101010;
   border-radius: 8px 8px;
   overflow: hidden;
 }
 
-.trend-block-one .image-box .image img {
+.dest-block .image-box .image img {
   position: relative;
   width: 100%;
   border-radius: 8px 8px;
@@ -133,13 +62,11 @@
   transition: all 0.3s ease;
 }
 
-.trend-block-one .inner-box:hover .image img {
+.dest-block .inner-box:hover .image img {
   opacity: 0.75;
 }
 
-
-
-.trend-block-one .title {
+.dest-block .title {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -151,7 +78,7 @@
   line-height: 30px;
 }
 
-.trend-block-one .title h4 {
+.dest-block .title h4 {
   position: relative;
   float: left;
   color: #ffffff;
@@ -161,16 +88,16 @@
   margin: 10px 0;
 }
 
-.trend-block-one .title h4 a {
+.dest-block .title h4 a {
   color: #ffffff;
 }
 
-.trend-block-one .title .more-link {
+.dest-block .title .more-link {
   position: relative;
   float: right;
 }
 
-.trend-block-one .title .more-link a {
+.dest-block .title .more-link a {
   position: relative;
   display: block;
   width: 50px;
@@ -183,13 +110,13 @@
   border-radius: 50%;
 }
 
-.trend-block-one .title .more-link a:hover {
+.dest-block .title .more-link a:hover {
   color: #ffffff;
   border-color: #1dc5ce;
   background: #1dc5ce;
 }
 
-.trend-block-one .title:before {
+.dest-block .title:before {
   content: "";
   position: absolute;
   left: 0;

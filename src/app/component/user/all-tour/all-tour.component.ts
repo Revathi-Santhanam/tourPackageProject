@@ -28,15 +28,18 @@ export class AllTourComponent {
   getAllToursForUsers() {
     this.tourService.getAllToursForUsers().subscribe({
       next: (response: any) => {
-        this.tours = response.data;
+        console.log(response.data);
+        const today = new Date();
+        this.tours = response.data.filter((tour: Tour) => new Date(tour.departureDate!) > today);
         this.totalPages = Math.ceil(this.tours.length / this.itemsPerPage);
         // console.log('Total Pages:', this.totalPages);
         this.updatePaginatedTours();
         // console.log('Paginated Tours:', this.paginatedTours);
       },
-      error: (err) => {
-        let message: string = err?.error?.error?.message;
-        this.error = message.includes(',') ? message.split(',')[0] : message;
+      complete: () => {},
+      error: (error: Error) => {
+        console.log('Message:', error.message);
+        console.log('Name:', error.name);
       },
     });
   }

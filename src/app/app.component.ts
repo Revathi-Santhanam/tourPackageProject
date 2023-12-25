@@ -4,6 +4,7 @@ import { AnimationOptions } from 'ngx-lottie';
 import { AuthService } from './service/auth.service';
 import { LoaderService } from './service/loader.service';
 import { BookingLoaderService } from './service/interceptor/booking-loader.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
